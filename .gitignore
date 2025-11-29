@@ -47,3 +47,8 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+data/*.rda
+data/*.csv
+.DS_Store
+__pycache__/
+*.pyc
