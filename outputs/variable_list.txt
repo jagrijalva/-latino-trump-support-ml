@@ -1,0 +1,1009 @@
+CMPS 2016 Variables
+Dataset shape: 10,144 rows x 1006 columns
+
+  1. RESPID                                   | int64      | unique: 10144 | missing:    0
+  2. INTERVIEW_START                          | object     | unique:     3 | missing:    0
+  3. INTERVIEW_END                            | object     | unique:     3 | missing:    0
+  4. DIFF_DATE                                | int64      | unique:     2 | missing:    0
+  5. ZIPCODE                                  | float64    | unique:     0 | missing: 10144
+  6. CITY_NAME                                | object     | unique:     1 | missing:    0
+  7. COUNTY_NAME                              | object     | unique:   842 | missing:    0
+  8. WEIGHT                                   | float64    | unique:  3072 | missing:    0
+  9. NAT_WEIGHT                               | float64    | unique:  3072 | missing:    0
+ 10. S1                                       | object     | unique:     6 | missing:    0
+ 11. ETHNIC_QUOTA                             | object     | unique:     4 | missing:    0
+ 12. S2_1                                     | int64      | unique:     2 | missing:    0
+ 13. S2_2                                     | int64      | unique:     2 | missing:    0
+ 14. S2_3                                     | int64      | unique:     2 | missing:    0
+ 15. S2_4                                     | int64      | unique:     2 | missing:    0
+ 16. S2_5                                     | int64      | unique:     2 | missing:    0
+ 17. S2_6                                     | int64      | unique:     2 | missing:    0
+ 18. S2_7                                     | int64      | unique:     2 | missing:    0
+ 19. S3                                       | object     | unique:     3 | missing:    0
+ 20. S4                                       | object     | unique:    51 | missing:    0
+ 21. S5                                       | object     | unique:     2 | missing:    0
+ 22. S6                                       | int64      | unique:    79 | missing:    0
+ 23. AGE                                      | float64    | unique:    75 | missing:   11
+ 24. S7                                       | object     | unique:     3 | missing:    0
+ 25. S8                                       | object     | unique:    14 | missing: 7138
+ 26. S8_14_OTHER                              | object     | unique:    51 | missing:    0
+ 27. S9                                       | object     | unique:    15 | missing: 7042
+ 28. S9_15_OTHER                              | object     | unique:    94 | missing:    0
+ 29. S10                                      | object     | unique:    21 | missing: 7142
+ 30. S10_21_OTHER                             | object     | unique:    49 | missing:    0
+ 31. C1_1                                     | object     | unique:     3 | missing:    0
+ 32. C1_2                                     | object     | unique:     3 | missing:    0
+ 33. C1_3                                     | object     | unique:     3 | missing:    0
+ 34. C1_4                                     | object     | unique:     3 | missing:    0
+ 35. C1_5                                     | object     | unique:     3 | missing:    0
+ 36. C1_6                                     | object     | unique:     3 | missing:    0
+ 37. C1_7                                     | object     | unique:     3 | missing:    0
+ 38. C1_8                                     | object     | unique:     3 | missing:    0
+ 39. C1_9                                     | object     | unique:     3 | missing:    0
+ 40. C1_10                                    | object     | unique:     3 | missing:    0
+ 41. C1_11                                    | object     | unique:     3 | missing:    0
+ 42. C1_12                                    | object     | unique:     3 | missing:    0
+ 43. C1_13                                    | object     | unique:     3 | missing:    0
+ 44. C1_14                                    | float64    | unique:     2 | missing:    1
+ 45. C1_15                                    | float64    | unique:     2 | missing:    1
+ 46. C2                                       | object     | unique:     5 | missing:    1
+ 47. C3                                       | object     | unique:     5 | missing:    1
+ 48. C4                                       | object     | unique:     6 | missing:    0
+ 49. C5                                       | object     | unique:     6 | missing:    0
+ 50. C6                                       | object     | unique:     6 | missing:    0
+ 51. C7                                       | object     | unique:     6 | missing:    0
+ 52. C8                                       | object     | unique:     6 | missing:    0
+ 53. C9                                       | object     | unique:     6 | missing:    0
+ 54. C10                                      | object     | unique:     6 | missing:    0
+ 55. C11                                      | object     | unique:     5 | missing:    1
+ 56. C12                                      | object     | unique:     2 | missing: 4121
+ 57. C13                                      | object     | unique:     4 | missing: 4583
+ 58. C14                                      | object     | unique:     6 | missing:    0
+ 59. C15                                      | object     | unique:     4 | missing:    0
+ 60. BL16_FIRST                               | object     | unique:     5 | missing: 7867
+ 61. BL16_SECOND                              | object     | unique:     4 | missing: 10055
+ 62. BL17_FIRST                               | object     | unique:    12 | missing: 9811
+ 63. BL17_SECOND                              | object     | unique:    10 | missing: 10076
+ 64. SPLITL18L19                              | object     | unique:     4 | missing: 7143
+ 65. L18                                      | object     | unique:     3 | missing: 7143
+ 66. L19                                      | object     | unique:     7 | missing: 7142
+ 67. L20                                      | object     | unique:     6 | missing: 7142
+ 68. L21                                      | object     | unique:     6 | missing: 8328
+ 69. L22                                      | object     | unique:     6 | missing: 7142
+ 70. C23                                      | object     | unique:     6 | missing:    0
+ 71. B24                                      | object     | unique:     7 | missing: 7041
+ 72. A24                                      | object     | unique:     7 | missing: 7137
+ 73. L24                                      | object     | unique:     7 | missing: 7142
+ 74. C25                                      | object     | unique:     5 | missing:    0
+ 75. C26                                      | object     | unique:     2 | missing: 3502
+ 76. C27                                      | object     | unique:     5 | missing: 6643
+ 77. L28R                                     | object     | unique:     3 | missing: 9661
+ 78. L28D                                     | object     | unique:     3 | missing: 8707
+ 79. L29                                      | object     | unique:     4 | missing: 9063
+ 80. L30R                                     | object     | unique:     4 | missing: 10001
+ 81. L30D                                     | object     | unique:     3 | missing: 9856
+ 82. C31                                      | object     | unique:     6 | missing:    1
+ 83. C32                                      | object     | unique:     5 | missing:    0
+ 84. C33                                      | object     | unique:     5 | missing:    0
+ 85. C34_1                                    | object     | unique:     3 | missing: 3269
+ 86. C34_2                                    | object     | unique:     3 | missing: 3269
+ 87. C34_3                                    | object     | unique:     3 | missing: 3269
+ 88. C34_4                                    | object     | unique:     3 | missing: 3269
+ 89. C34_5                                    | object     | unique:     3 | missing: 3269
+ 90. C34_OTHER                                | object     | unique:   570 | missing:    0
+ 91. C35_1                                    | object     | unique:     3 | missing: 6874
+ 92. C35_2                                    | object     | unique:     5 | missing: 6872
+ 93. C35_3                                    | object     | unique:     5 | missing: 6871
+ 94. C35_4                                    | object     | unique:     4 | missing: 6871
+ 95. C35_5                                    | object     | unique:     5 | missing: 6871
+ 96. C35_OTHER                                | object     | unique:   149 | missing:    0
+ 97. A36                                      | object     | unique:     7 | missing: 8770
+ 98. L37                                      | object     | unique:     6 | missing: 9422
+ 99. SPLITC38                                 | object     | unique:     6 | missing:    1
+100. C38                                      | object     | unique:     5 | missing:    1
+101. C39                                      | object     | unique:     5 | missing:    1
+102. C40                                      | object     | unique:     8 | missing:    0
+103. C41                                      | object     | unique:     8 | missing:    0
+104. C42                                      | object     | unique:     8 | missing:    0
+105. C43                                      | object     | unique:     7 | missing:    0
+106. C44                                      | object     | unique:     9 | missing:    0
+107. C45                                      | object     | unique:     7 | missing:    0
+108. L46                                      | object     | unique:     6 | missing: 7142
+109. C47                                      | object     | unique:     7 | missing:    0
+110. C48                                      | object     | unique:     6 | missing:    0
+111. C49                                      | object     | unique:     4 | missing:    1
+112. C50                                      | object     | unique:  2050 | missing:    0
+113. C51                                      | object     | unique:     2 | missing: 6254
+114. C52                                      | object     | unique:     6 | missing: 6254
+115. C53                                      | object     | unique:     5 | missing:    6
+116. C54                                      | object     | unique:     3 | missing: 7923
+117. C55                                      | object     | unique:     5 | missing: 7917
+118. C56                                      | object     | unique:     3 | missing:    0
+119. C57                                      | object     | unique:     3 | missing:    0
+120. C58                                      | object     | unique:     3 | missing:    1
+121. C59                                      | object     | unique:     3 | missing:    2
+122. C60                                      | object     | unique:     3 | missing:    0
+123. C61                                      | object     | unique:     3 | missing:    1
+124. C62                                      | object     | unique:     4 | missing:    1
+125. C63                                      | object     | unique:     2 | missing:    0
+126. C64                                      | object     | unique:     2 | missing:   10
+127. A65                                      | object     | unique:     4 | missing: 7870
+128. C66                                      | object     | unique:     5 | missing:    0
+129. C67                                      | object     | unique:     5 | missing:    8
+130. C67B                                     | object     | unique:     7 | missing: 6585
+131. C68                                      | object     | unique:     4 | missing:    2
+132. C69                                      | object     | unique:     4 | missing: 7654
+133. C70                                      | object     | unique:     5 | missing: 7654
+134. C71                                      | object     | unique:     6 | missing:    3
+135. C72                                      | object     | unique:     6 | missing:    2
+136. C73                                      | object     | unique:     6 | missing:    3
+137. C74                                      | object     | unique:     8 | missing:    0
+138. C75                                      | object     | unique:     8 | missing:    1
+139. C76                                      | object     | unique:     7 | missing:   10
+140. A77                                      | object     | unique:    11 | missing: 7128
+141. C78                                      | object     | unique:     4 | missing:    9
+142. C79                                      | object     | unique:     5 | missing: 7439
+143. C80                                      | object     | unique:     7 | missing: 2698
+144. C81                                      | object     | unique:     5 | missing:    8
+145. C82_1                                    | float64    | unique:     2 | missing: 7735
+146. C82_2                                    | object     | unique:     4 | missing: 7734
+147. C82_3                                    | object     | unique:     4 | missing: 7735
+148. C82_4                                    | object     | unique:     3 | missing: 7735
+149. C82_5                                    | object     | unique:     3 | missing: 7735
+150. LA83_1                                   | object     | unique:     3 | missing: 8902
+151. LA83_2                                   | object     | unique:     3 | missing: 8902
+152. LA83_3                                   | object     | unique:     5 | missing: 8896
+153. C84                                      | object     | unique:     5 | missing:   10
+154. C85_1                                    | object     | unique:     3 | missing: 9417
+155. C85_2                                    | object     | unique:     4 | missing: 9416
+156. C85_3                                    | object     | unique:     5 | missing: 9415
+157. C85_4                                    | object     | unique:     4 | missing: 9416
+158. C85_5                                    | object     | unique:     4 | missing: 9416
+159. C85_6                                    | object     | unique:     4 | missing: 9416
+160. C85_7                                    | object     | unique:     4 | missing: 9416
+161. C85_8                                    | object     | unique:     5 | missing: 9408
+162. C85_8_OTHER                              | object     | unique:    28 | missing:    1
+163. C86                                      | object     | unique:     6 | missing:  726
+164. BL87                                     | object     | unique:     4 | missing: 4041
+165. BL88                                     | object     | unique:     4 | missing: 4041
+166. BL89                                     | object     | unique:     4 | missing: 4041
+167. BL90                                     | object     | unique:     4 | missing: 4042
+168. BL91                                     | object     | unique:     4 | missing: 4044
+169. BL92                                     | object     | unique:     4 | missing: 4044
+170. BL93                                     | object     | unique:     4 | missing: 4044
+171. BL94                                     | object     | unique:     4 | missing: 4044
+172. BL95                                     | object     | unique:     4 | missing: 4044
+173. BL96                                     | object     | unique:     4 | missing: 4052
+174. BA97_1                                   | float64    | unique:     2 | missing: 4036
+175. BA97_2                                   | float64    | unique:     2 | missing: 4036
+176. BA97_3                                   | float64    | unique:     2 | missing: 4036
+177. BA97_4                                   | float64    | unique:     2 | missing: 4036
+178. BA97_5                                   | float64    | unique:     2 | missing: 4036
+179. BA97_6                                   | float64    | unique:     2 | missing: 4036
+180. BA98_1                                   | float64    | unique:     2 | missing: 4036
+181. BA98_2                                   | float64    | unique:     2 | missing: 4036
+182. BA98_3                                   | float64    | unique:     2 | missing: 4036
+183. BA98_4                                   | float64    | unique:     2 | missing: 4036
+184. BA98_5                                   | float64    | unique:     2 | missing: 4036
+185. BA98_6                                   | float64    | unique:     2 | missing: 4036
+186. BA99_1                                   | float64    | unique:     2 | missing: 4036
+187. BA99_2                                   | float64    | unique:     2 | missing: 4036
+188. BA99_3                                   | float64    | unique:     2 | missing: 4036
+189. BA99_4                                   | float64    | unique:     2 | missing: 4036
+190. BA99_5                                   | float64    | unique:     2 | missing: 4036
+191. BA99_6                                   | float64    | unique:     2 | missing: 4036
+192. BA100_1                                  | float64    | unique:     2 | missing: 4036
+193. BA100_2                                  | float64    | unique:     2 | missing: 4036
+194. BA100_3                                  | object     | unique:     3 | missing: 4035
+195. BA100_4                                  | float64    | unique:     2 | missing: 4036
+196. BA100_5                                  | float64    | unique:     2 | missing: 4036
+197. BA100_6                                  | float64    | unique:     2 | missing: 4036
+198. BA101_1                                  | float64    | unique:     2 | missing: 4036
+199. BA101_2                                  | float64    | unique:     2 | missing: 4036
+200. BA101_3                                  | float64    | unique:     2 | missing: 4036
+201. BA101_4                                  | float64    | unique:     2 | missing: 4036
+202. BA101_5                                  | float64    | unique:     2 | missing: 4036
+203. BA101_6                                  | object     | unique:     3 | missing: 4035
+204. BA102_1                                  | object     | unique:     3 | missing: 4034
+205. BA102_2                                  | float64    | unique:     2 | missing: 4036
+206. BA102_3                                  | float64    | unique:     2 | missing: 4036
+207. BA102_4                                  | float64    | unique:     2 | missing: 4036
+208. BA102_5                                  | float64    | unique:     2 | missing: 4036
+209. BA102_6                                  | object     | unique:     5 | missing: 4028
+210. A103_TREATMENTS                          | object     | unique:     3 | missing:   16
+211. A103_1_1                                 | float64    | unique:     2 | missing: 9160
+212. A103_1_2                                 | float64    | unique:     2 | missing: 9160
+213. A103_1_3                                 | float64    | unique:     2 | missing: 9160
+214. A103_1_4                                 | object     | unique:     3 | missing: 9159
+215. A103_1_5                                 | object     | unique:     3 | missing: 9159
+216. A103_1_6                                 | object     | unique:     3 | missing: 9159
+217. A103_1_88                                | object     | unique:     3 | missing: 9159
+218. A103_2_1                                 | object     | unique:     3 | missing: 9119
+219. A103_2_2                                 | object     | unique:     3 | missing: 9119
+220. A103_2_3                                 | object     | unique:     3 | missing: 9119
+221. A103_2_4                                 | object     | unique:     3 | missing: 9119
+222. A103_2_5                                 | object     | unique:     3 | missing: 9119
+223. A103_2_6                                 | object     | unique:     4 | missing: 9118
+224. A103_2_88                                | object     | unique:     6 | missing: 9116
+225. A104                                     | object     | unique:     7 | missing: 7135
+226. A105_1                                   | object     | unique:    14 | missing: 7135
+227. A105_2                                   | object     | unique:    15 | missing: 7134
+228. A105_3                                   | object     | unique:    15 | missing: 7134
+229. A105_4                                   | object     | unique:    16 | missing: 7126
+230. SPLITC106                                | object     | unique:     8 | missing:   30
+231. C106                                     | object     | unique:    10 | missing:    1
+232. C107                                     | object     | unique:    10 | missing:    1
+233. C108                                     | object     | unique:     9 | missing:    1
+234. C109                                     | object     | unique:     9 | missing:    2
+235. C110                                     | object     | unique:     6 | missing:    4
+236. C111                                     | object     | unique:     4 | missing:    3
+237. C112                                     | object     | unique:     6 | missing:    1
+238. C113                                     | object     | unique:     8 | missing:    0
+239. C114                                     | object     | unique:     7 | missing:    0
+240. C115                                     | object     | unique:     7 | missing:    9
+241. A116                                     | object     | unique:     5 | missing: 7137
+242. A117                                     | object     | unique:     8 | missing: 7129
+243. C118                                     | object     | unique:     5 | missing:    4
+244. C119                                     | object     | unique:     5 | missing:    4
+245. C120                                     | object     | unique:     8 | missing:    4
+246. C121                                     | object     | unique:     5 | missing:   12
+247. BW122                                    | object     | unique:     5 | missing: 6007
+248. BW123                                    | object     | unique:     6 | missing: 6005
+249. BW124                                    | object     | unique:     6 | missing: 6005
+250. BW125                                    | object     | unique:     6 | missing: 6005
+251. BW126                                    | object     | unique:     8 | missing: 6004
+252. BW127                                    | object     | unique:     7 | missing: 6004
+253. BW128                                    | object     | unique:    10 | missing: 5997
+254. C129                                     | object     | unique:    13 | missing:    1
+255. C129_8_OTHER                             | object     | unique:   234 | missing:    1
+256. C130                                     | object     | unique:    10 | missing: 2127
+257. C131                                     | object     | unique:     9 | missing: 2128
+258. BA132                                    | object     | unique:   129 | missing:    6
+259. C133_1                                   | object     | unique:   101 | missing: 6854
+260. C133_2                                   | object     | unique:   100 | missing: 6854
+261. C133_3                                   | object     | unique:    96 | missing: 6852
+262. C133_4                                   | object     | unique:    95 | missing: 6852
+263. C133_5                                   | object     | unique:    63 | missing: 6856
+264. A134                                     | object     | unique:     8 | missing: 8823
+265. A135                                     | object     | unique:     8 | missing: 7135
+266. A136                                     | object     | unique:    16 | missing: 7691
+267. C137                                     | object     | unique:     7 | missing:    0
+268. C138                                     | object     | unique:     6 | missing:    1
+269. C139                                     | object     | unique:     6 | missing:    1
+270. C140                                     | object     | unique:     6 | missing:    4
+271. SPLITC141                                | object     | unique:     5 | missing:    4
+272. C141                                     | object     | unique:     8 | missing:    2
+273. SPLITC142                                | object     | unique:     6 | missing:    1
+274. FLAG_DESCRIPTION                         | object     | unique:     7 | missing:    2
+275. C142                                     | object     | unique:     5 | missing:   11
+276. B143                                     | object     | unique:     2 | missing: 7041
+277. B144                                     | object     | unique:     2 | missing: 7040
+278. B145                                     | object     | unique:     7 | missing: 7032
+279. BLA146                                   | object     | unique:     8 | missing: 1036
+280. LA147                                    | object     | unique:     5 | missing: 4148
+281. B148                                     | object     | unique:     6 | missing: 7041
+282. B149                                     | object     | unique:     8 | missing: 7032
+283. C150                                     | object     | unique:     4 | missing:    7
+284. C151                                     | object     | unique:     6 | missing: 3799
+285. C152                                     | object     | unique:     5 | missing:   10
+286. B153                                     | object     | unique:     5 | missing: 7042
+287. B154                                     | object     | unique:     4 | missing: 7034
+288. BL155                                    | object     | unique:     4 | missing: 4051
+289. B156                                     | object     | unique:     6 | missing: 7041
+290. B157                                     | object     | unique:     8 | missing: 7033
+291. C158                                     | object     | unique:     4 | missing:   11
+292. B159                                     | object     | unique:     4 | missing: 7041
+293. B160                                     | object     | unique:     4 | missing: 7041
+294. B161                                     | object     | unique:     3 | missing: 7042
+295. B162                                     | object     | unique:     3 | missing: 7042
+296. B163                                     | object     | unique:     3 | missing: 7042
+297. B164                                     | object     | unique:     4 | missing: 7041
+298. B165                                     | object     | unique:     6 | missing: 7039
+299. B166                                     | object     | unique:     5 | missing: 8220
+300. B167                                     | object     | unique:     5 | missing: 7039
+301. B168                                     | object     | unique:     4 | missing: 7039
+302. B169                                     | object     | unique:     5 | missing: 7039
+303. B170                                     | object     | unique:     9 | missing: 7032
+304. BL171                                    | object     | unique:     8 | missing: 4044
+305. BL172                                    | object     | unique:     9 | missing: 4044
+306. BL173                                    | object     | unique:     5 | missing: 4044
+307. BL174                                    | object     | unique:     5 | missing: 4044
+308. BL175                                    | object     | unique:     8 | missing: 4044
+309. BL176                                    | object     | unique:     5 | missing: 4052
+310. B177                                     | object     | unique:     5 | missing: 7041
+311. B178                                     | object     | unique:     5 | missing: 7041
+312. B179                                     | object     | unique:     4 | missing: 7042
+313. B180                                     | object     | unique:     4 | missing: 7041
+314. B181_1                                   | object     | unique:   226 | missing: 7509
+315. B181_2                                   | object     | unique:   181 | missing: 8088
+316. B181_3                                   | float64    | unique:   223 | missing: 7540
+317. B182                                     | object     | unique:     2 | missing: 7042
+318. B183                                     | object     | unique:     3 | missing: 7042
+319. B184                                     | object     | unique:     5 | missing: 7040
+320. B185                                     | object     | unique:     5 | missing: 7038
+321. B186                                     | object     | unique:     6 | missing: 7039
+322. B187                                     | object     | unique:     4 | missing: 7040
+323. SPLITA188                                | object     | unique:     5 | missing: 7140
+324. A188                                     | object     | unique:     4 | missing: 8605
+325. A189                                     | object     | unique:     8 | missing: 8663
+326. BLA190                                   | object     | unique:     6 | missing: 1037
+327. BLA191                                   | object     | unique:     6 | missing: 1045
+328. A192                                     | object     | unique:     6 | missing: 7128
+329. L192                                     | object     | unique:     6 | missing: 7142
+330. LA193                                    | object     | unique:     5 | missing: 4137
+331. C194                                     | object     | unique:     7 | missing:    8
+332. A195_1                                   | object     | unique:     7 | missing: 7134
+333. A195_2                                   | object     | unique:     4 | missing: 7137
+334. A195_3                                   | object     | unique:     5 | missing: 7127
+335. L195_1                                   | object     | unique:     6 | missing: 7142
+336. L195_2                                   | object     | unique:     5 | missing: 7142
+337. L195_3                                   | object     | unique:     8 | missing: 7142
+338. SPLITL197                                | object     | unique:     7 | missing: 7146
+339. L197                                     | object     | unique:     7 | missing: 8651
+340. L198                                     | object     | unique:     9 | missing: 8631
+341. SPLITL199                                | object     | unique:     8 | missing: 7144
+342. L199                                     | object     | unique:     9 | missing: 7143
+343. LA200                                    | object     | unique:    15 | missing: 4137
+344. LA201                                    | object     | unique:  4917 | missing:    1
+345. LA201A                                   | object     | unique:    81 | missing: 4157
+346. LA202_1                                  | object     | unique:     9 | missing: 6733
+347. LA202_2                                  | object     | unique:    10 | missing: 5603
+348. LA202_3                                  | object     | unique:    10 | missing: 5611
+349. LA202_4                                  | object     | unique:     9 | missing: 6721
+350. LA202_5                                  | object     | unique:     9 | missing: 5880
+351. LA202_6                                  | object     | unique:    11 | missing: 6667
+352. LA202_7                                  | object     | unique:    15 | missing: 5284
+353. LA202_NONE                               | object     | unique:    13 | missing: 4136
+354. LA203                                    | object     | unique:    13 | missing: 4137
+355. LA204                                    | object     | unique:    13 | missing: 4137
+356. BLA205                                   | object     | unique:     6 | missing: 1035
+357. BLA206                                   | object     | unique:     5 | missing: 1034
+358. BLA207                                   | object     | unique:     8 | missing: 1034
+359. BLA208                                   | object     | unique:    11 | missing: 1034
+360. L209                                     | object     | unique:     8 | missing: 7145
+361. SPLITL210L211                            | object     | unique:    15 | missing: 7181
+362. L210A                                    | object     | unique:    15 | missing: 8669
+363. L211B                                    | object     | unique:    18 | missing: 8571
+364. L212                                     | object     | unique:     7 | missing: 7142
+365. L213                                     | object     | unique:     8 | missing: 7142
+366. L214                                     | object     | unique:    13 | missing: 7142
+367. L215                                     | object     | unique:    18 | missing: 7142
+368. SPLITL216                                | object     | unique:    19 | missing: 7142
+369. L216NAME_HID                             | object     | unique:    17 | missing:   11
+370. L216DESC_HID                             | object     | unique:    15 | missing:   11
+371. PRONOUN1_HID                             | object     | unique:    11 | missing:   11
+372. PRONOUN2_HID                             | object     | unique:    13 | missing:   12
+373. L216                                     | object     | unique:    16 | missing: 7187
+374. L217                                     | object     | unique:    19 | missing: 7142
+375. L218                                     | object     | unique:    14 | missing: 7142
+376. L219                                     | object     | unique:    12 | missing: 7142
+377. L220                                     | object     | unique:    17 | missing: 7142
+378. SPLITC221                                | object     | unique:    14 | missing:   11
+379. C221                                     | object     | unique:    13 | missing:    0
+380. C222                                     | object     | unique:    12 | missing:    0
+381. C223                                     | object     | unique:    13 | missing:    0
+382. C224                                     | object     | unique:    15 | missing:    0
+383. C225                                     | object     | unique:    15 | missing:    0
+384. C226                                     | object     | unique:    11 | missing:    0
+385. BL227                                    | object     | unique:    15 | missing: 4040
+386. C228                                     | object     | unique:    15 | missing:    0
+387. BL229                                    | object     | unique:    13 | missing: 4040
+388. L230                                     | object     | unique:    12 | missing: 7142
+389. L231                                     | object     | unique:    13 | missing: 7142
+390. L232                                     | object     | unique:    11 | missing: 7142
+391. C233                                     | object     | unique:     8 | missing:    0
+392. C234                                     | object     | unique:     7 | missing:    0
+393. C235                                     | object     | unique:     9 | missing:    0
+394. C236                                     | object     | unique:    14 | missing:    0
+395. C237                                     | object     | unique:    16 | missing:    0
+396. C237_7_OTHER                             | object     | unique:    91 | missing:    0
+397. C238                                     | object     | unique:    10 | missing:    1
+398. C239                                     | object     | unique:    12 | missing:    0
+399. C240                                     | object     | unique:    11 | missing:    0
+400. L241                                     | object     | unique:    11 | missing: 7148
+401. C242_HID                                 | object     | unique:     9 | missing:  646
+402. SPLITC242                                | object     | unique:    48 | missing:    0
+403. C242A                                    | object     | unique:  4110 | missing:    0
+404. C243                                     | object     | unique:     6 | missing:    0
+405. C244                                     | object     | unique:     7 | missing:    1
+406. C245                                     | object     | unique:     7 | missing:    2
+407. C246                                     | object     | unique:     7 | missing:    1
+408. C247                                     | object     | unique:     8 | missing:    1
+409. C248                                     | object     | unique:     8 | missing:    1
+410. C249                                     | object     | unique:     8 | missing:    1
+411. LA250                                    | object     | unique:     9 | missing: 4141
+412. C251                                     | object     | unique:     6 | missing:   37
+413. C252                                     | object     | unique:     7 | missing: 8861
+414. C253                                     | object     | unique:     5 | missing: 4742
+415. C254                                     | object     | unique:     5 | missing: 4770
+416. C255                                     | object     | unique:     5 | missing: 4776
+417. C256                                     | object     | unique:     6 | missing: 4804
+418. C257                                     | object     | unique:     6 | missing: 4792
+419. C258                                     | object     | unique:    15 | missing: 4796
+420. C259                                     | object     | unique:    41 | missing: 6939
+421. C259_OTHER                               | object     | unique:  1129 | missing:   44
+422. C260                                     | object     | unique:    19 | missing: 4706
+423. C261                                     | object     | unique:    55 | missing: 4668
+424. C242B                                    | object     | unique:  4003 | missing:    0
+425. C262                                     | object     | unique:    23 | missing:    8
+426. C263                                     | object     | unique:    15 | missing:    0
+427. C264                                     | object     | unique:    15 | missing:    1
+428. C265_1                                   | object     | unique:     8 | missing:    0
+429. C265_2                                   | object     | unique:    12 | missing:    0
+430. SPLITL266                                | object     | unique:    10 | missing: 7142
+431. L266                                     | object     | unique:    11 | missing: 7142
+432. SPLITL267                                | object     | unique:    14 | missing:    0
+433. L267                                     | object     | unique:    18 | missing: 7142
+434. L268                                     | object     | unique:    15 | missing: 7145
+435. L269                                     | object     | unique:    20 | missing: 7142
+436. L270                                     | object     | unique:    15 | missing: 7145
+437. L271                                     | object     | unique:    16 | missing: 7142
+438. C272                                     | object     | unique:    23 | missing:    0
+439. C273                                     | object     | unique:    26 | missing:   14
+440. BLOCK_274_275                            | object     | unique:    12 | missing:   48
+441. SPLITC274                                | object     | unique:    13 | missing: 5089
+442. SPLITC275                                | object     | unique:    16 | missing: 5051
+443. C274                                     | object     | unique:    14 | missing: 5075
+444. C275                                     | object     | unique:    15 | missing: 5003
+445. C276                                     | object     | unique:     5 | missing:    1
+446. C277                                     | object     | unique:     6 | missing:    0
+447. C278                                     | object     | unique:     6 | missing:    0
+448. C279                                     | object     | unique:     7 | missing:    0
+449. C280                                     | object     | unique:     7 | missing:    0
+450. C281                                     | object     | unique:     7 | missing:    0
+451. C282                                     | object     | unique:     5 | missing:    1
+452. C283                                     | object     | unique:    10 | missing:    0
+453. C284                                     | object     | unique:    10 | missing:    3
+454. C285                                     | object     | unique:    14 | missing:    0
+455. C286                                     | object     | unique:    13 | missing:    1
+456. C287                                     | object     | unique:    15 | missing:    0
+457. C288                                     | object     | unique:    15 | missing:    0
+458. C289                                     | object     | unique:    15 | missing:    1
+459. L290                                     | object     | unique:    14 | missing: 7157
+460. SPLITL291L292                            | object     | unique:    15 | missing: 7197
+461. L291                                     | object     | unique:    13 | missing: 8653
+462. L292                                     | object     | unique:    13 | missing: 8566
+463. L293                                     | object     | unique:    15 | missing: 7143
+464. L294                                     | object     | unique:    18 | missing: 7161
+465. SPLITL295L296                            | object     | unique:     9 | missing: 7192
+466. L295                                     | object     | unique:     8 | missing: 8610
+467. L296                                     | object     | unique:     9 | missing: 8623
+468. SPLITL297L298                            | object     | unique:     8 | missing: 7201
+469. L297                                     | object     | unique:     6 | missing: 8665
+470. L298                                     | object     | unique:     8 | missing: 8550
+471. L299                                     | object     | unique:    14 | missing: 7146
+472. L300                                     | object     | unique:    15 | missing: 7146
+473. L301                                     | object     | unique:    11 | missing: 7146
+474. L302                                     | object     | unique:    11 | missing: 7147
+475. LA303                                    | object     | unique:     7 | missing: 4167
+476. TIME_304                                 | object     | unique:  4082 | missing:  109
+477. SPLITBW304                               | object     | unique:     6 | missing: 6007
+478. VID_BW304                                | object     | unique:     3 | missing: 6007
+479. BW305                                    | object     | unique:     6 | missing: 6007
+480. BW306                                    | object     | unique:     6 | missing: 6007
+481. BW307                                    | object     | unique:     6 | missing: 6007
+482. BW308                                    | object     | unique:     6 | missing: 6007
+483. BW309                                    | object     | unique:     7 | missing: 6005
+484. BW310                                    | object     | unique:     9 | missing: 6004
+485. B311                                     | object     | unique:     6 | missing: 7038
+486. B312                                     | object     | unique:     5 | missing: 7039
+487. B313                                     | object     | unique:     5 | missing: 7038
+488. B314                                     | object     | unique:     6 | missing: 7037
+489. B315                                     | object     | unique:     9 | missing: 7010
+490. B316                                     | object     | unique:     9 | missing: 6933
+491. C317                                     | object     | unique:     8 | missing:    1
+492. C318                                     | object     | unique:     9 | missing:    0
+493. C319                                     | object     | unique:     5 | missing:    0
+494. C320                                     | object     | unique:     6 | missing:    1
+495. C321                                     | object     | unique:     6 | missing:    2
+496. C322                                     | object     | unique:     5 | missing:    3
+497. C323                                     | object     | unique:     5 | missing:    3
+498. C324                                     | object     | unique:     5 | missing:    3
+499. C325                                     | object     | unique:     6 | missing:    3
+500. C326                                     | object     | unique:     9 | missing:   20
+501. C327                                     | object     | unique:     9 | missing:   80
+502. C328_1                                   | object     | unique:     5 | missing: 6632
+503. C328_2                                   | object     | unique:     6 | missing: 7177
+504. C328_3                                   | object     | unique:     6 | missing: 8547
+505. C328_4                                   | object     | unique:     7 | missing: 8671
+506. C328_5                                   | object     | unique:     7 | missing: 8780
+507. C328_6                                   | object     | unique:     7 | missing: 8365
+508. C328_7                                   | object     | unique:     7 | missing: 8550
+509. C328_8                                   | object     | unique:     9 | missing: 8442
+510. C328_9                                   | object     | unique:     9 | missing: 8408
+511. C329                                     | object     | unique:     5 | missing:    0
+512. C330                                     | object     | unique:     6 | missing:    0
+513. C331                                     | object     | unique:     5 | missing:    0
+514. C332                                     | object     | unique:     9 | missing:    0
+515. C333                                     | object     | unique:    10 | missing:    0
+516. C334                                     | object     | unique:     9 | missing:    0
+517. C335                                     | object     | unique:     7 | missing:    0
+518. C336                                     | object     | unique:     9 | missing:    0
+519. SPLITC337                                | object     | unique:     9 | missing:    0
+520. C337                                     | object     | unique:     5 | missing:    2
+521. C338                                     | object     | unique:     7 | missing:    0
+522. C339                                     | object     | unique:     7 | missing:    0
+523. C340                                     | object     | unique:     8 | missing:    1
+524. C341                                     | object     | unique:    24 | missing:    0
+525. C342                                     | object     | unique:    32 | missing:    5
+526. C343                                     | object     | unique:    92 | missing:  220
+527. C344                                     | object     | unique:    88 | missing:  343
+528. C345                                     | object     | unique:    25 | missing: 6902
+529. C346                                     | object     | unique:    17 | missing:    3
+530. C347_CITY                                | object     | unique:    30 | missing:    0
+531. C347_STATE                               | object     | unique:    76 | missing:    7
+532. C348                                     | object     | unique:    33 | missing:   20
+533. C349_1                                   | object     | unique:   102 | missing:  580
+534. C349_2                                   | object     | unique:   103 | missing: 1075
+535. C349_3                                   | object     | unique:   104 | missing: 1348
+536. C349_4                                   | object     | unique:   100 | missing: 2036
+537. C349_5                                   | object     | unique:    80 | missing: 3859
+538. SPLITC350C360                            | object     | unique:     8 | missing:   66
+539. C350                                     | object     | unique:     6 | missing: 5066
+540. C351                                     | object     | unique:     5 | missing: 5078
+541. C352                                     | object     | unique:     5 | missing: 5067
+542. C353                                     | object     | unique:     5 | missing: 5076
+543. C354                                     | object     | unique:     6 | missing: 5066
+544. C355                                     | object     | unique:     8 | missing: 5076
+545. C356                                     | object     | unique:     8 | missing: 5066
+546. C357                                     | object     | unique:     7 | missing: 5077
+547. C358                                     | object     | unique:     9 | missing: 5065
+548. C359                                     | object     | unique:     9 | missing: 5059
+549. C360                                     | object     | unique:    10 | missing: 5025
+550. C361                                     | object     | unique:    12 | missing:    2
+551. C362                                     | object     | unique:     9 | missing:    2
+552. C363                                     | object     | unique:    10 | missing:    9
+553. L364                                     | object     | unique:    14 | missing: 7175
+554. L365                                     | object     | unique:    13 | missing: 8990
+555. L366                                     | object     | unique:    13 | missing: 7187
+556. L367                                     | object     | unique:    13 | missing: 8641
+557. L368                                     | object     | unique:    12 | missing: 8643
+558. L369                                     | object     | unique:     9 | missing: 9370
+559. ROTA370                                  | object     | unique:     5 | missing: 7134
+560. A370                                     | object     | unique:     8 | missing: 7135
+561. A371                                     | object     | unique:    10 | missing: 7108
+562. A372                                     | object     | unique:    13 | missing: 7030
+563. C373                                     | object     | unique:    26 | missing:    4
+564. C373_7_OTHER                             | object     | unique:   178 | missing:   18
+565. C374                                     | object     | unique:    97 | missing: 7673
+566. C375                                     | object     | unique:    22 | missing: 8726
+567. C375_6_OTHER                             | object     | unique:    63 | missing:   95
+568. C376                                     | object     | unique:    77 | missing: 8947
+569. C377                                     | object     | unique:    14 | missing: 2487
+570. C378M                                    | object     | unique:   120 | missing: 8227
+571. C378F                                    | object     | unique:   121 | missing: 8232
+572. C378B_1                                  | object     | unique:   122 | missing: 9294
+573. C379                                     | object     | unique:    19 | missing: 4480
+574. C380                                     | object     | unique:    15 | missing: 4040
+575. C381                                     | object     | unique:    11 | missing:    2
+576. C382M                                    | object     | unique:    20 | missing:    1
+577. C382F                                    | object     | unique:    26 | missing:   24
+578. C383                                     | object     | unique:    21 | missing:   67
+579. C384                                     | object     | unique:    16 | missing: 9152
+580. C385                                     | object     | unique:    12 | missing:   24
+581. C386                                     | object     | unique:    16 | missing: 3876
+582. SPLITC387                                | object     | unique:    13 | missing: 9868
+583. C387                                     | object     | unique:    13 | missing: 4297
+584. C388                                     | object     | unique:    14 | missing:    0
+585. C389                                     | object     | unique:    12 | missing:    0
+586. C390                                     | object     | unique:     9 | missing:    1
+587. C391_1                                   | object     | unique:     4 | missing:   67
+588. C391_2                                   | object     | unique:     3 | missing:   86
+589. C391_3                                   | object     | unique:     3 | missing:   97
+590. C391_4                                   | object     | unique:     4 | missing:  190
+591. C391_5                                   | object     | unique:     4 | missing:  207
+592. C391_6                                   | object     | unique:     4 | missing:  202
+593. C391_7                                   | object     | unique:     6 | missing:  178
+594. C391_8                                   | object     | unique:     7 | missing:  177
+595. C391_9                                   | object     | unique:     5 | missing:  188
+596. C391_10                                  | object     | unique:     7 | missing:  215
+597. C391_11                                  | object     | unique:     9 | missing:  492
+598. C391_12                                  | object     | unique:     8 | missing:  325
+599. C391_13                                  | object     | unique:    31 | missing:  383
+600. C391_14                                  | object     | unique:    53 | missing: 4208
+601. C391_14_OTHER                            | object     | unique:  1183 | missing:   70
+602. C391_NONE                                | object     | unique:    18 | missing: 10033
+603. C392                                     | object     | unique:    26 | missing:   16
+604. C393                                     | object     | unique:    53 | missing: 8073
+605. C394                                     | float64    | unique:   128 | missing: 8057
+606. RESPONSE_MINUTES                         | float64    | unique:  6068 | missing:    2
+607. LOG_POPDENSITY_ZIP                       | float64    | unique:  3517 | missing:  374
+608. URBANICITY9                              | float64    | unique:   109 | missing:  129
+609. DP2000_TOTALPOP                          | float64    | unique:  4927 | missing:  372
+610. DP2000_PERCENTMALE                       | float64    | unique:   227 | missing:  372
+611. DP2000_PERCENTFEMALE                     | float64    | unique:   281 | missing:  372
+612. DP2000_MEDIANAGE                         | float64    | unique:   410 | missing:  372
+613. DP2000_PERCENT18OLDER                    | float64    | unique:   442 | missing:  372
+614. DP2000_PERCENT18OLDERMALE                | float64    | unique:   314 | missing:  372
+615. DP2000_PERCENT18OLDERFEMALE              | float64    | unique:   343 | missing:  372
+616. DP2000_PERCENT65OLDER                    | float64    | unique:   415 | missing:  372
+617. DP2000_NUMBWHITE                         | float64    | unique:  4891 | missing:  372
+618. DP2000_PERCENTWHITE                      | float64    | unique:   984 | missing:  372
+619. DP2000_NUMBBLACK                         | float64    | unique:  3409 | missing:  372
+620. DP2000_PERCENTBLACK                      | float64    | unique:   826 | missing:  372
+621. DP2000_NUMBAMERICANINDIANALASKAN         | float64    | unique:   819 | missing:  372
+622. DP2000_PERCENTAMERICANINDIANALAS         | float64    | unique:   163 | missing:  372
+623. DP2000_NUMBASIAN                         | float64    | unique:  2287 | missing:  372
+624. DP2000_PERCENTASIAN                      | float64    | unique:   410 | missing:  372
+625. DP2000_NUMBASIANINDIAN                   | float64    | unique:   957 | missing:  372
+626. DP2000_PERCENTASIANINDIAN                | float64    | unique:   162 | missing:  372
+627. DP2000_NUMBASIANCHINESE                  | float64    | unique:  1065 | missing:  372
+628. DP2000_PERCENTASIANCHINESE               | float64    | unique:   226 | missing:  372
+629. DP2000_NUMBASIANFILIPINO                 | float64    | unique:   953 | missing:  372
+630. DP2000_PERCENTASIANFILIPINO              | float64    | unique:   178 | missing:  372
+631. DP2000_NUMBASIANJAPANESE                 | float64    | unique:   593 | missing:  372
+632. DP2000_PERCENTASIANJAPANESE              | float64    | unique:   139 | missing:  372
+633. DP2000_NUMBASIANKOREAN                   | float64    | unique:   727 | missing:  372
+634. DP2000_PERCENTASIANKOREAN                | float64    | unique:   146 | missing:  372
+635. DP2000_NUMBASIANVIETNAMESE               | float64    | unique:   771 | missing:  372
+636. DP2000_PERCENTASIANVIETNAMESE            | float64    | unique:   157 | missing:  372
+637. DP2000_NUMBASIANOTHER                    | float64    | unique:   841 | missing:  372
+638. DP2000_PERCENTASIANOTHER                 | float64    | unique:   140 | missing:  372
+639. DP2000_NUMBERHAWAIIANPACIFICISLA         | float64    | unique:   407 | missing:  372
+640. DP2000_PERCENTHAWAIIANPACIFICISL         | float64    | unique:   151 | missing:  372
+641. DP2000_NUMBOTHERRACE                     | float64    | unique:  2521 | missing:  372
+642. DP2000_PERCENTOTHERRACE                  | float64    | unique:   502 | missing:  372
+643. DP2000_NUMBHISP                          | float64    | unique:  3438 | missing:  372
+644. DP2000_PERCENTHISP                       | float64    | unique:   773 | missing:  372
+645. DP2000_NUMBMEXICAN                       | float64    | unique:  2517 | missing:  372
+646. DP2000_PERCENTMEXICAN                    | float64    | unique:   630 | missing:  372
+647. DP2000_NUMBPUERTORICAN                   | float64    | unique:  1131 | missing:  372
+648. DP2000_PERCENTPUERTORICAN                | float64    | unique:   266 | missing:  372
+649. DP2000_NUMBCUBAN                         | float64    | unique:   551 | missing:  372
+650. DP2000_PERCENTCUBAN                      | float64    | unique:   198 | missing:  372
+651. DP2000_NUMBOTHERHISP                     | float64    | unique:  2268 | missing:  372
+652. DP2000_PERCENTOTHERHISP                  | float64    | unique:   428 | missing:  372
+653. DP2000_NUMBNONHISP                       | float64    | unique:  4938 | missing:  372
+654. DP2000_PERCENTNONHISP                    | float64    | unique:   782 | missing:  372
+655. DP2000_NUMBWHITENONHISP                  | float64    | unique:  4842 | missing:  372
+656. DP2000_PERCENTWHITENONHISP               | float64    | unique:   958 | missing:  372
+657. DP2000_PERCENTHOUSEHOLDFAMILIES          | float64    | unique:   658 | missing:  373
+658. DP2000_PERCENTHOUSEHOLDFAMILYWKI         | float64    | unique:   567 | missing:  373
+659. DP2000_PERCENTHOUSEHOLDSMARRIED          | float64    | unique:   727 | missing:  373
+660. DP2000_02_PERCENTHOUSEHOLDSMARRI         | float64    | unique:   524 | missing:  373
+661. DP2000_PERCENTHOUSEHOLDSSINGLEFE         | float64    | unique:   322 | missing:  373
+662. DP2000_PERCENTHOUSEHOLDSW18ORYOU         | float64    | unique:   623 | missing:  373
+663. DP2000_PERCENTHOUSEHOLDSW65OROLD         | float64    | unique:   533 | missing:  373
+664. DP2000_AVERAGEHOUSHOLDSIZE               | float64    | unique:   347 | missing:  372
+665. DP2000_AVERAGEFAMILYSIZE                 | float64    | unique:   339 | missing:  372
+666. DP2000_TOTALNUMBHOUSEHOLDS               | float64    | unique:  4648 | missing:  372
+667. DP2000_PERCENTHOUSEHOLDSOCCUPIED         | float64    | unique:   400 | missing:  373
+668. DP2000_PERCENTHOUSEHOLDSVACANT           | float64    | unique:   332 | missing:  373
+669. DP2000_PERCENTHOMEOWNERVACANCY           | float64    | unique:   134 | missing:  376
+670. DP2000_PERCENTRENTALVACANCY              | float64    | unique:   280 | missing:  373
+671. HISP2000_NUMBDOMINICAN                   | float64    | unique:   501 | missing:  372
+672. HISP2000_PERCENTDOMINICAN                | float64    | unique:   268 | missing:  379
+673. HISP2000_NUMBCENTRALAMERICAN             | float64    | unique:   957 | missing:  372
+674. HISP2000_PERCENTCENTRALAMERICAN          | float64    | unique:   333 | missing:  379
+675. HISP2000_NUMBCOSTARICAN                  | float64    | unique:   147 | missing:  372
+676. HISP2000_PERCENTCOSTARICAN               | float64    | unique:   121 | missing:  379
+677. HISP2000_NUMBGUATEMALAN                  | float64    | unique:   438 | missing:  372
+678. HISP2000_PERCENTGUATEMALAN               | float64    | unique:   182 | missing:  379
+679. HISP2000_NUMBHONDURAN                    | float64    | unique:   356 | missing:  372
+680. HISP2000_PERCENTHONDURAN                 | float64    | unique:   153 | missing:  379
+681. HISP2000_NUMBNICARAGUAN                  | float64    | unique:   280 | missing:  372
+682. HISP2000_PERCENTNICARAGUAN               | float64    | unique:   114 | missing:  379
+683. HISP2000_NUMBPANAMANIAN                  | float64    | unique:   187 | missing:  372
+684. HISP2000_PERCENTPANAMANIAN               | float64    | unique:   141 | missing:  379
+685. HISP2000_NUMBSALVADORAN                  | float64    | unique:   596 | missing:  372
+686. HISP2000_PERCENTSALVADORAN               | float64    | unique:   221 | missing:  379
+687. HISP2000_NUMBOTHERCENTRALAMERICA         | float64    | unique:   254 | missing:  372
+688. HISP2000_PERCENTOTHERCENTRALAMER         | float64    | unique:   120 | missing:  379
+689. HISP2000_NUMBSAMERICAN                   | float64    | unique:   818 | missing:  372
+690. HISP2000_PERCENTSAMERICAN                | float64    | unique:   352 | missing:  379
+691. HISP2000_NUMBARGENTINEAN                 | float64    | unique:   192 | missing:  372
+692. HISP2000_PERCENTARGENTINEAN              | float64    | unique:    94 | missing:  379
+693. HISP2000_NUMBBOLIVIAN                    | float64    | unique:   122 | missing:  372
+694. HISP2000_PERCENTBOLIVIAN                 | float64    | unique:    91 | missing:  379
+695. HISP2000_NUMBCHILEAN                     | float64    | unique:   150 | missing:  372
+696. HISP2000_PERCENTCHILEAN                  | float64    | unique:   114 | missing:  379
+697. HISP2000_NUMBCOLOMBIAN                   | float64    | unique:   475 | missing:  372
+698. HISP2000_PERCENTCOLOMBIAN                | float64    | unique:   203 | missing:  379
+699. HISP2000_NUMBECUADORIAN                  | float64    | unique:   323 | missing:  372
+700. HISP2000_PERCENTECUADORIAN               | float64    | unique:   119 | missing:  379
+701. HISP2000_NUMBPARAGUAYAN                  | float64    | unique:    63 | missing:  372
+702. HISP2000_PERCENTPARAGUAYAN               | float64    | unique:    81 | missing:  379
+703. HISP2000_NUMBPERUVIAN                    | float64    | unique:   349 | missing:  372
+704. HISP2000_PERCENTPERUVIAN                 | float64    | unique:   120 | missing:  379
+705. HISP2000_NUMBURUGUAYAN                   | float64    | unique:    86 | missing:  372
+706. HISP2000_PERCENTURUGUAYAN                | float64    | unique:    74 | missing:  379
+707. HISP2000_NUMBVENEZUELAN                  | float64    | unique:   190 | missing:  372
+708. HISP2000_PERCENTVENEZUELAN               | float64    | unique:   101 | missing:  379
+709. HISP2000_NUMBOTHERSAMERICAN              | float64    | unique:   159 | missing:  372
+710. HISP2000_PERCENTOTHERSAMERICAN           | float64    | unique:   123 | missing:  380
+711. SC2000_PERCENTEDUCLESSTHANGRADE9         | float64    | unique:   376 | missing:  378
+712. SC2000_PERCENTEDUC9_12NODIPLOMA          | float64    | unique:   340 | missing:  378
+713. SC2000_PERCENTEDUCHIGHSCHOOLGRAD         | float64    | unique:   453 | missing:  378
+714. SC2000_PERCENTEDUCSOMECOLLEGE            | float64    | unique:   331 | missing:  378
+715. SC2000_PERCENTEDUCAA                     | float64    | unique:   169 | missing:  378
+716. SC2000_PERCENTEDUCBA                     | float64    | unique:   459 | missing:  378
+717. SC2000_PERCENTEDUCGRADUATEPROFDE         | float64    | unique:   454 | missing:  378
+718. SC2000_PERCENTEDUCHSORHIGHER             | float64    | unique:   649 | missing:  378
+719. SC2000_PERCENTEDUCBAORHIGHER             | float64    | unique:   746 | missing:  378
+720. SC2000_PERCENTNATIVEBORN                 | float64    | unique:   627 | missing:  378
+721. SC2000_PERCENTFOREIGHBORN                | float64    | unique:   571 | missing:  378
+722. SC2000_PERCENTNOTCITIZEN                 | float64    | unique:   453 | missing:  378
+723. SC2000_PERCENTLANGUAGEENGLISHONL         | float64    | unique:   803 | missing:  378
+724. SC2000_PERCENTLANGUAGENONENGLISH         | float64    | unique:   795 | missing:  377
+725. EC2000_PERCENTLABORFORCE                 | float64    | unique:   490 | missing:  375
+726. EC2000_PERCENTEMPLOYED                   | float64    | unique:   580 | missing:  375
+727. EC2000_PERCENTUNEMPLOYED                 | float64    | unique:   246 | missing:  375
+728. EC2000_PERCENTNOTLABORFORCE              | float64    | unique:   536 | missing:  375
+729. EC2000_PERCENTCOMMUTEALONE               | float64    | unique:   679 | missing:  375
+730. EC2000_PERCENTCOMMUTEWALK                | float64    | unique:   262 | missing:  375
+731. EC2000_PERCENTINCLESSTHAN10K             | float64    | unique:   364 | missing:  377
+732. EC2000_PERCENTINC10K_14K                 | float64    | unique:   193 | missing:  377
+733. EC2000_PERCENTINC15K_24K                 | float64    | unique:   256 | missing:  377
+734. EC2000_PERCENTINC25K_34K                 | float64    | unique:   230 | missing:  377
+735. EC2000_PERCENTINC35K_49K                 | float64    | unique:   249 | missing:  377
+736. EC2000_PERCENTINC50K_74K                 | float64    | unique:   318 | missing:  377
+737. EC2000_PERCENT75K_99K                    | float64    | unique:   256 | missing:  377
+738. EC2000_PERCENTINC100K_149K               | float64    | unique:   295 | missing:  377
+739. EC2000_PERCENTINC150K_199K               | float64    | unique:   198 | missing:  377
+740. EC2000_PERCENTINC200K_MORE               | float64    | unique:   328 | missing:  377
+741. EC2000_MEDIANHHINC                       | float64    | unique:  4951 | missing:  372
+742. EC2000_MEANHHINCE                        | float64    | unique:  4998 | missing:  377
+743. EC2000_MEDIANFAMILYINC                   | float64    | unique:  4984 | missing:  372
+744. EC2000_MEDIANINCFULLTIMEMALE             | float64    | unique:  4754 | missing:  372
+745. EC2000_MEDIANINCFULLTIMEFEMALE           | float64    | unique:  4618 | missing:  372
+746. EC2000_PERCENTFAMILIESBELOWPOVER         | float64    | unique:   416 | missing:  378
+747. EC2000_PERCENTFAMILYWKIDSBELOWPO         | float64    | unique:   502 | missing:  383
+748. EC2000_PERCENTALLPEOPLEBELOWPOVE         | float64    | unique:   495 | missing:  377
+749. HC2000_PERCENTHOUSESBUILTBEFORE1         | float64    | unique:   720 | missing:  376
+750. HC2000_MEDIANHOUSEVALUE                  | float64    | unique:  2340 | missing:  371
+751. HC2000_MEDIANGROSSRENT                   | float64    | unique:  1084 | missing:  371
+752. DP2010_TOTALPOPULATION                   | float64    | unique:  5115 | missing:  129
+753. DP2010_MEDIANAGE                         | float64    | unique:   438 | missing:  129
+754. DP2010_PERCENT18OLDER                    | float64    | unique:   460 | missing:  132
+755. DP2010_NUMBMALE                          | float64    | unique:  4853 | missing:  129
+756. DP2010_PERCENTMALE                       | float64    | unique:   287 | missing:  132
+757. DP2010_MEDIANAGEMALE                     | float64    | unique:   418 | missing:  129
+758. DP2010_PERCENT18OLDERMALER               | float64    | unique:   357 | missing:  132
+759. DP2010_NUMBFEMALE                        | float64    | unique:  4904 | missing:  129
+760. DP2010_PERCENTFEMALE                     | float64    | unique:   280 | missing:  132
+761. DP2010_MEDIANAGEFEMALE                   | float64    | unique:   448 | missing:  129
+762. DP2010_PERCENT18OLDERFEMALE              | float64    | unique:   352 | missing:  132
+763. DP2010_NUMBWHITE                         | float64    | unique:  5011 | missing:  129
+764. DP2010_PERCENTWHITE                      | float64    | unique:  1000 | missing:  132
+765. DP2010_NUMBBLACK                         | float64    | unique:  3721 | missing:  129
+766. DP2010_PERCENTBLACK                      | float64    | unique:   833 | missing:  132
+767. DP2010_NUMBERAMERICANINDIANALASK         | float64    | unique:   902 | missing:  129
+768. DP2010_PERCENTAMERICANINDIANALAS         | float64    | unique:   174 | missing:  132
+769. DP2010_NUMBASIAN                         | float64    | unique:  2743 | missing:  129
+770. DP2010_PERCENTASIAN                      | float64    | unique:   468 | missing:  132
+771. DP2010_NUMBERASIANINDIAN                 | float64    | unique:  1230 | missing:  129
+772. DP2010_PERCENTASIANINDIAN                | float64    | unique:   212 | missing:  132
+773. DP2010_NUMBERASIANCHINESE                | float64    | unique:  1215 | missing:  129
+774. DP2010_PERCENTASIANCHINESE               | float64    | unique:   259 | missing:  132
+775. DP2010_NUMBASIANFILIPINO                 | float64    | unique:  1150 | missing:  129
+776. DP2010_PERCENTASIANFILIPINO              | float64    | unique:   190 | missing:  132
+777. DP2010_NUMBJAPANESE                      | float64    | unique:   561 | missing:  129
+778. DP2010_PERCENTJAPANESE                   | float64    | unique:   134 | missing:  132
+779. DP2010_NUMBKOREAN                        | float64    | unique:   839 | missing:  129
+780. DP2010_PERCENTKOREAN                     | float64    | unique:   169 | missing:  132
+781. DP2010_NUMBASIANVIETNAMESE               | float64    | unique:   890 | missing:  129
+782. DP2010_PERCENTASIANVIETNAMESE            | float64    | unique:   172 | missing:  132
+783. DP2010_NUMBASIANOTHER                    | float64    | unique:  1131 | missing:  129
+784. DP2010_PERCENTASIANOTHER                 | float64    | unique:   161 | missing:  132
+785. DP2010_NUMBHAWAIIANPACIFICISLAND         | float64    | unique:   471 | missing:  129
+786. DP2010_PERCENTHAWAIIANPACIFICISL         | float64    | unique:   160 | missing:  132
+787. DP2010_NUMBOTHERRACE                     | float64    | unique:  2998 | missing:  129
+788. DP2010_PERCENTOTHERRACE                  | float64    | unique:   488 | missing:  132
+789. DP2010_NUMBHISP                          | float64    | unique:  4027 | missing:  129
+790. DP2010_PERCENTHISP                       | float64    | unique:   864 | missing:  132
+791. DP2010_NUMBMEXICAN                       | float64    | unique:  3090 | missing:  129
+792. DP2010_PERCENTMEXICAN                    | float64    | unique:   723 | missing:  132
+793. DP2010_NUMBPUERTORICAN                   | float64    | unique:  1390 | missing:  129
+794. DP2010_PERCENTPUERTORICAN                | float64    | unique:   284 | missing:  132
+795. DP2010_NUMBCUBAN                         | float64    | unique:   670 | missing:  129
+796. DP2010_PERCENTCUBAN                      | float64    | unique:   213 | missing:  132
+797. DP2010_NUMBOTHERHISP                     | float64    | unique:  2558 | missing:  129
+798. DP2010_PERCENTOTHERHISP                  | float64    | unique:   434 | missing:  132
+799. DP2010_NUMBNOTHISP                       | float64    | unique:  5053 | missing:  129
+800. DP2010_PERCENTNOTHISP                    | float64    | unique:   865 | missing:  132
+801. DP2010_NUMBNONHISPWHITE                  | float64    | unique:  4946 | missing:  129
+802. DP2010_PERCENTNONHISPWHITE               | float64    | unique:   971 | missing:  132
+803. DP2010_TOTALHOUSEHOLD                    | float64    | unique:   648 | missing:  137
+804. DP2010_PERCENTHOUSEHOLDSWCHILDUN         | float64    | unique:   549 | missing:  137
+805. DP2010_PERCENTHOUSEHOLDMARRIED           | float64    | unique:   696 | missing:  137
+806. DP2010_PERCENTHOUSEHOLDMARRIEDWK         | float64    | unique:   468 | missing:  137
+807. DP2010_PERCENTSINGLEFATHERHOUSEH         | float64    | unique:   143 | missing:  137
+808. DP2010_PERCENTSINGLEMOTHERHOUSEH         | float64    | unique:   316 | missing:  137
+809. DP2010_PERCENTHOUSEHOLDWUNDER18Y         | float64    | unique:   618 | missing:  137
+810. DP2010_PERCENTHOUSEHOLDW65YEARSO         | float64    | unique:   523 | missing:  137
+811. DP2010_AVGHOUSEHOLDSIZE                  | float64    | unique:   393 | missing:  129
+812. DP2010_AVGFAMILYSIZE                     | float64    | unique:   336 | missing:  129
+813. DP2010_TOTALHOUSINGUNITS                 | float64    | unique:  4769 | missing:  129
+814. DP2010_PERCENTHOUSINGOCCUPIED            | float64    | unique:   439 | missing:  137
+815. DP2010_PERCENTHOUSINGVACANT              | float64    | unique:   405 | missing:  137
+816. DP2010_PERCENTHOMEOWNERVACANCY           | float64    | unique:   180 | missing:  129
+817. DP2010_PERCENTRENTALVACANCY              | float64    | unique:   302 | missing:  129
+818. HISP2010_NUMBDOMINICAN                   | float64    | unique:   718 | missing:  129
+819. HISP2010_PERCENTDOMINICAN                | float64    | unique:   206 | missing:  132
+820. HISP2010_NUMBCENTAMERICAN                | float64    | unique:  1464 | missing:  129
+821. HISP2010_PERCENTCENTAMERICAN             | float64    | unique:   224 | missing:  132
+822. HISP2010_NUMBCOSTARICAN                  | float64    | unique:   189 | missing:  129
+823. HISP2010_PERCENTCOSTARICAN               | float64    | unique:    87 | missing:  132
+824. HISP2010_NUMBGUATEMALAN                  | float64    | unique:   691 | missing:  129
+825. HISP2010_PERCENTGUATEMALAN               | float64    | unique:   144 | missing:  132
+826. HISP2010_NUMBHONDURAN                    | float64    | unique:   591 | missing:  129
+827. HISP2010_PERCENTHONDURAN                 | float64    | unique:   113 | missing:  132
+828. HISP2010_NUMBNICARAGUAN                  | float64    | unique:   390 | missing:  129
+829. HISP2010_PERCENTNICARAGUAN               | float64    | unique:    98 | missing:  132
+830. HISP2010_NUMBPANAMANIAN                  | float64    | unique:   232 | missing:  129
+831. HISP2010_PERCENTPANAMANIAN               | float64    | unique:    90 | missing:  132
+832. HISP2010_NUMBSALVADORAN                  | float64    | unique:   913 | missing:  129
+833. HISP2010_PERCENTSALVADORAN               | float64    | unique:   145 | missing:  132
+834. HISP2010_NUMBOTHERCENTAMERICAN           | float64    | unique:   122 | missing:  129
+835. HISP2010_PERCENTOTHERCENTAMERICA         | float64    | unique:    90 | missing:  132
+836. HISP2010_NUMBSOUTHAMERICAN               | float64    | unique:  1173 | missing:  129
+837. HISP2010_PERCENTSOUTHAMERICAN            | float64    | unique:   200 | missing:  132
+838. HISP2010_NUMBARGENTIANEAN                | float64    | unique:   281 | missing:  129
+839. HISP2010_PERCENTARGENTINEAN              | float64    | unique:    66 | missing:  132
+840. HISP2010_NUMBBOLIVIAN                    | float64    | unique:   181 | missing:  129
+841. HISP2010_PERCENTBOLIVIAN                 | float64    | unique:    64 | missing:  132
+842. HISP2010_NUMBCHILEAN                     | float64    | unique:   186 | missing:  129
+843. HISP2010_PERCENTCHILEAN                  | float64    | unique:    80 | missing:  132
+844. HISP2010_NUMBCOLOMBIAN                   | float64    | unique:   626 | missing:  129
+845. HISP2010_PERCENTCOLOMBIAN                | float64    | unique:   132 | missing:  132
+846. HISP2010_NUMBECUADORIAN                  | float64    | unique:   472 | missing:  129
+847. HISP2010_PERCENTECUDORIAN                | float64    | unique:    75 | missing:  132
+848. HISP2010_NUMBPARAGUAYAN                  | float64    | unique:    86 | missing:  129
+849. HISP2010_PERCENTPARAGUAYAN               | float64    | unique:    70 | missing:  132
+850. HISP2010_NUMBPERUVIAN                    | float64    | unique:   504 | missing:  129
+851. HISP2010_PERCENTPERUVIAN                 | float64    | unique:    72 | missing:  132
+852. HISP2010_NUMBURUGUAYAN                   | float64    | unique:   151 | missing:  129
+853. HISP2010_PERCENTURUGUAYAN                | float64    | unique:    66 | missing:  132
+854. HISP2010_NUMBVENEZUELAN                  | float64    | unique:   283 | missing:  129
+855. HISP2010_PERCENTVENEZUELAN               | float64    | unique:    59 | missing:  132
+856. HISP2010_NUMBOTHERSOUTHAMERICAN          | float64    | unique:    88 | missing:  129
+857. HISP2010_PERCENTOTHERSOUTHAMERIC         | float64    | unique:    97 | missing:  132
+858. EC2011_PERCENTLABORFORCE                 | float64    | unique:   488 | missing:  134
+859. EC2011_PERCENTEMPLOYED                   | float64    | unique:   564 | missing:  134
+860. EC2011_PERCENTUNEMPLOYED                 | float64    | unique:   254 | missing:  134
+861. EC2011_PERCENTNOTLABORFORCE              | float64    | unique:   532 | missing:  134
+862. EC2011_PERCENTCOMMUTINGALONE             | float64    | unique:   691 | missing:  134
+863. EC2011_PERCENTCOMMUTINGWALKING           | float64    | unique:   264 | missing:  134
+864. EC2011_PERCENTINCLESSTHAN10K             | float64    | unique:   303 | missing:  139
+865. EC2011_PERCENTINC10K_14K                 | float64    | unique:   200 | missing:  139
+866. EC2011_PERCENTINC15K_24K                 | float64    | unique:   255 | missing:  139
+867. EC2011_PERCENTINC25K_34K                 | float64    | unique:   232 | missing:  139
+868. EC2011_PERCENTINC35K_49K                 | float64    | unique:   248 | missing:  139
+869. EC2011_PERCENTINC50K_74K                 | float64    | unique:   284 | missing:  139
+870. EC2011_PERCENTINC75K_99K                 | float64    | unique:   248 | missing:  139
+871. EC2011_PERCENTINC100K_149K               | float64    | unique:   318 | missing:  139
+872. EC2011_PERCENTINC150K_199K               | float64    | unique:   241 | missing:  139
+873. EC2011_PERCENTINC200K_MORE               | float64    | unique:   429 | missing:  139
+874. EC2011_MEDIANHHINC                       | float64    | unique:  5145 | missing:  144
+875. EC2011_MEANHHINC                         | float64    | unique:  5164 | missing:  147
+876. EC2011_MEDIANFAMILYINC                   | float64    | unique:  5156 | missing:  148
+877. EC2011_MEANFAMILYINC                     | float64    | unique:  5213 | missing:  148
+878. EC2011_MEDIANINCFULLTIMEMALE             | float64    | unique:  5030 | missing:  142
+879. EC2011_MEDIANINCFULLTIMEFEMALE           | float64    | unique:  4898 | missing:  148
+880. EC2011_PERCENTFAMILESBELOWPOVERT         | float64    | unique:   420 | missing:  144
+881. EC2011_PERCENTFAMILIESWKIDSBELOW         | float64    | unique:   559 | missing:  146
+882. EC2011_PERCENTALLPEOPLEBELOWPOVE         | float64    | unique:   518 | missing:  138
+883. HC2011_PERCENTHOMESBUILTBEFORE19         | float64    | unique:   227 | missing:  139
+884. HC2011_MEDIANHOMEVALUE                   | float64    | unique:  3192 | missing:  243
+885. HC2011_MEDIANGROSSRENT                   | float64    | unique:  1352 | missing:  279
+886. SC2011_PERCENTEDUCLESSTHANGRADE9         | float64    | unique:   345 | missing:  138
+887. SC2011_PERCENTEDUC9_12NODIP              | float64    | unique:   303 | missing:  138
+888. SC2011_PERCENTEDUCHIGHSCHOOLGRAD         | float64    | unique:   482 | missing:  138
+889. SC2011_PERCENTEDUCSOMECOLLEGE            | float64    | unique:   346 | missing:  138
+890. SC2011_PERCENTEDUCAA                     | float64    | unique:   196 | missing:  138
+891. SC2011_PERCENTEDUCBA                     | float64    | unique:   470 | missing:  138
+892. SC2011_PERCENTEDUCGRADUATEPROFDE         | float64    | unique:   503 | missing:  138
+893. SC2011_PERCENTEDUCHSORHIGHER             | float64    | unique:   572 | missing:  138
+894. SC2011_PERCENTEDUCBAORHIGHER             | float64    | unique:   779 | missing:  138
+895. SC2011_PERCENTNATIVEBORN                 | float64    | unique:   620 | missing:  137
+896. SC2011_PERCENTFOREIGNBORN                | float64    | unique:   619 | missing:  137
+897. SC2011_PERCENTNOTCITIZEN                 | float64    | unique:   807 | missing:  185
+898. SC2011_PERCENTLANGUAGEENGLISHONL         | float64    | unique:   858 | missing:  137
+899. SC2011_PERCENTLANGUAGENONENGLISH         | float64    | unique:   884 | missing:  136
+900. DP2015_TOTALPOP                          | float64    | unique:  5114 | missing:  129
+901. DP2015_PERCENTMALE                       | float64    | unique:   248 | missing:  133
+902. DP2015_PERCENTFEMALE                     | float64    | unique:   289 | missing:  133
+903. DP2015_MEDIANAGE                         | float64    | unique:   423 | missing:  134
+904. DP2015_PERCENT18OLDER                    | float64    | unique:   419 | missing:  133
+905. DP2015_03_PERCENT18OLDERMALE             | float64    | unique:   282 | missing:  133
+906. DP2015_03_PERCENT18OLDERFEMALE           | float64    | unique:   342 | missing:  133
+907. DP2015_NUMBWHITE                         | float64    | unique:  5022 | missing:  129
+908. DP2015_PERCENTWHITE                      | float64    | unique:   995 | missing:  133
+909. DP2015_NUMBBLACK                         | float64    | unique:  3785 | missing:  129
+910. DP2015_PERCENTBLACK                      | float64    | unique:   837 | missing:  133
+911. DP2015_NUMBAMERICANINDIANALASKAN         | float64    | unique:   806 | missing:  129
+912. DP2015_PERCENTAMERICANINDIANALAS         | float64    | unique:   165 | missing:  133
+913. DP2015_NUMBASIAN                         | float64    | unique:  2810 | missing:  129
+914. DP2015_PERCENTASIAN                      | float64    | unique:   488 | missing:  133
+915. DP2015_NUMBASIANINDIAN                   | float64    | unique:  1327 | missing:  129
+916. DP2015_PERCENTASIANINDIAN                | float64    | unique:   222 | missing:  133
+917. DP2015_NUMBASIANCHINESE                  | float64    | unique:  1329 | missing:  129
+918. DP2015_PERCENTASIANCHINESE               | float64    | unique:   269 | missing:  133
+919. DP2015_NUMBASIANFILIPINO                 | float64    | unique:  1198 | missing:  129
+920. DP2015_PERCENTASIANFILIPINO              | float64    | unique:   189 | missing:  133
+921. DP2015_NUMBASIANJAPANESE                 | float64    | unique:   583 | missing:  129
+922. DP2015_PERCENTASIANJAPANESE              | float64    | unique:   133 | missing:  133
+923. DP2015_NUMBASIANKOREAN                   | float64    | unique:   860 | missing:  129
+924. DP2015_PERCENTASIANKOREAN                | float64    | unique:   170 | missing:  133
+925. DP2015_NUMBASIANVIETNAMESE               | float64    | unique:   960 | missing:  129
+926. DP2015_PERCENTASIANVIETNAMESE            | float64    | unique:   168 | missing:  133
+927. DP2015_NUMBASIANOTHER                    | float64    | unique:  1208 | missing:  129
+928. DP2015_PERCENTASIANOTHER                 | float64    | unique:   156 | missing:  133
+929. DP2015_NUMBHAWAIIANPACIFICISLAND         | float64    | unique:   516 | missing:  129
+930. DP2015_PERCENTHAWAIIANPACIFICISL         | float64    | unique:   157 | missing:  133
+931. DP2015_NUMBEROTHERRACE                   | float64    | unique:  2622 | missing:  129
+932. DP2015_PERCENTOTHERRACE                  | float64    | unique:   462 | missing:  133
+933. DP2015_NUMBHISP                          | float64    | unique:  4100 | missing:  129
+934. DP2015_PERCENTHISP                       | float64    | unique:   879 | missing:  133
+935. DP2015_NUMBMEXICAN                       | float64    | unique:  3207 | missing:  129
+936. DP2015_PERCENTMEXICAN                    | float64    | unique:   756 | missing:  133
+937. DP2015_NUMBPUERTORICAN                   | float64    | unique:  1504 | missing:  129
+938. DP2015_PERCENTPUERTORICAN                | float64    | unique:   293 | missing:  133
+939. DP2015_NUMBCUBAN                         | float64    | unique:   736 | missing:  129
+940. DP2015_PERCENTCUBAN                      | float64    | unique:   218 | missing:  133
+941. DP2015_NUMBOTHERHISP                     | float64    | unique:  2542 | missing:  129
+942. DP2015_PERCENTOTHERHISP                  | float64    | unique:   429 | missing:  133
+943. DP2015_NUMBNOTHISP                       | float64    | unique:  5050 | missing:  129
+944. DP2015_PERCENTNOTHISP                    | float64    | unique:   890 | missing:  133
+945. DP2015_NUMBWHITENONHISP                  | float64    | unique:  4947 | missing:  129
+946. DP2015_PERCENTWHITENONHISP               | float64    | unique:  1032 | missing:  133
+947. HISP2015_NUMBDOMINICAN                   | float64    | unique:   805 | missing:  129
+948. HISP2015_NUMBCENTRALAMERICAN             | float64    | unique:  1576 | missing:  129
+949. HISP2015_NUMBCOSTARICAN                  | float64    | unique:   288 | missing:  129
+950. HISP2015_NUMBGUATEMALAN                  | float64    | unique:   817 | missing:  129
+951. HISP2015_NUMBHONDURAN                    | float64    | unique:   669 | missing:  129
+952. HISP2015_01_NUMBNICARAGUAN               | float64    | unique:   451 | missing:  129
+953. HISP2015_01_NUMBPANAMANIAN               | float64    | unique:   319 | missing:  129
+954. HISP2015_NUMBSALVADORAN                  | float64    | unique:  1016 | missing:  129
+955. HISP2015_NUMBOTHERCENTRALAMERICA         | float64    | unique:   219 | missing:  129
+956. HISP2015_NUMBSAMERICAN                   | float64    | unique:  1241 | missing:  129
+957. HISP2015_NUMBARGENTINEAN                 | float64    | unique:   327 | missing:  129
+958. HISP2015_NUMBBOLIVIAN                    | float64    | unique:   237 | missing:  129
+959. HISP2015_NUMBCHILEAN                     | float64    | unique:   280 | missing:  129
+960. HISP2015_NUMBCOLOMBIAN                   | float64    | unique:   701 | missing:  129
+961. HISP2015_NUMBECUADORIAN                  | float64    | unique:   525 | missing:  129
+962. HISP2015_NUMBPARAGUAYAN                  | float64    | unique:   144 | missing:  129
+963. HISP2015_NUMBPERUVIAN                    | float64    | unique:   575 | missing:  129
+964. HISP2015_NUMBURUGUAYAN                   | float64    | unique:   197 | missing:  129
+965. HISP2015_NUMBVENEZUELAN                  | float64    | unique:   388 | missing:  129
+966. HISP2015_NUMBOTHERSAMERICAN              | float64    | unique:   236 | missing:  129
+967. EC2015_NUMBLABORFORCE                    | float64    | unique:  4923 | missing:  129
+968. EC2015_PERCENTLABORFORCE                 | float64    | unique:   330 | missing:  133
+969. EC2015_PERCENTCOMMUTEALONE               | float64    | unique:   696 | missing:  133
+970. EC2015_PERCENTCOMMUTEWALKING             | float64    | unique:   268 | missing:  133
+971. EC2015_PERCENTINCELESSTHAN10K            | float64    | unique:   300 | missing:  141
+972. EC2015_PERCENTINC10K_14K                 | float64    | unique:   194 | missing:  141
+973. EC2015_PERCENTINC15K_24K                 | float64    | unique:   246 | missing:  141
+974. EC2015_PERCENTINC25K_34K                 | float64    | unique:   221 | missing:  141
+975. EC2015_PERCENTINC35K_49K                 | float64    | unique:   246 | missing:  141
+976. EC2015_PERCENTINC50K_74K                 | float64    | unique:   266 | missing:  141
+977. EC2015_PERCENTINC75K_99K                 | float64    | unique:   233 | missing:  141
+978. EC2015_PERCENTINC100K_149K               | float64    | unique:   311 | missing:  141
+979. EC2015_PERCENTINC150K_199K               | float64    | unique:   239 | missing:  141
+980. EC2015_PERCENTINC200K_MORE               | float64    | unique:   452 | missing:  141
+981. EC2015_MEDIANHHINC                       | float64    | unique:  5131 | missing:  149
+982. EC2015_MEANHHINC                         | float64    | unique:  5195 | missing:  145
+983. EC2015_01_MEDIANFAMILYINC                | float64    | unique:  5131 | missing:  155
+984. EC2015_MEANFAMILYINC                     | float64    | unique:  5212 | missing:  149
+985. EC2015_MEDIANINCFULLTIMEMALE             | float64    | unique:  4903 | missing:  300
+986. EC2015_MEDIANINCFULLTIMEFEMALE           | float64    | unique:  4787 | missing:  299
+987. EC2015_PERCENTFAMILIESBELOWPOVER         | float64    | unique:   453 | missing:  143
+988. EC2015_PERCENTFAMILIESWKIDSBELOW         | float64    | unique:   592 | missing:  145
+989. EC2015_PERCENTALLPEOPLEBELOWPOVE         | float64    | unique:   534 | missing:  140
+990. HC2015_PERCENTHOUSESBUILTBEFORE1         | float64    | unique:   733 | missing:  140
+991. HC2015_MEDIANHOMEVALUE                   | float64    | unique:  3161 | missing:  181
+992. HC2015_MEDIANGROSSRENT                   | float64    | unique:  1486 | missing:  163
+993. SC2015_PERCENTEDUCLESSTHANGRADE9         | float64    | unique:   331 | missing:  137
+994. SC2015_PERCENTEDUC9_12NODIPLOMA          | float64    | unique:   284 | missing:  137
+995. SC2015_PERCENTEDUCHIGHSCHOOLGRAD         | float64    | unique:   477 | missing:  137
+996. SC2015_PERCENTEDUCSOMECOLLEGE            | float64    | unique:   337 | missing:  137
+997. SC2015_PERCENTEDUCAA                     | float64    | unique:   203 | missing:  137
+998. SC2015_PERCENTEDUCBA                     | float64    | unique:   473 | missing:  138
+999. SC2015_PERCENTEDUCGRADUATEPROFDE         | float64    | unique:   528 | missing:  139
+1000. SC2015_PERCENTEDUCHSORHIGHER             | float64    | unique:   546 | missing:  141
+1001. SC2015_PERCENTEDUCBAORHIGHER             | float64    | unique:   795 | missing:  141
+1002. SC2015_PERCENTNATIVEBORN                 | float64    | unique:   609 | missing:  141
+1003. SC2015_PERCENTFOREIGNBORN                | float64    | unique:   600 | missing:  144
+1004. SC2015_PERCENTNOTCITIZEN                 | float64    | unique:   801 | missing:  181
+1005. SC2015_PERCENTLANGUAGEENGLISHONL         | float64    | unique:   832 | missing:  179
+1006. SC2015_PERCENTLANGUAGENONENGLISH         | float64    | unique:   822 | missing:  247
