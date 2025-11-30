@@ -49,6 +49,7 @@ po/*~
 rsconnect/
 data/*.rda
 data/*.csv
+*.csv
 .DS_Store
 __pycache__/
 *.pyc
