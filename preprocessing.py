@@ -165,11 +165,11 @@ for col in df.columns:
             print(df[col].value_counts(dropna=False).head(15))
 
 # =============================================================================
-# Step 1.3: Create Dependent Variable (DV)
+# Step 1.2b: Create Dependent Variable (DV)
 # =============================================================================
 
 print("\n" + "=" * 60)
-print("Step 1.3: Create Dependent Variable")
+print("Step 1.2b: Create Dependent Variable")
 print("=" * 60)
 
 # The presidential vote variable is C14
@@ -216,12 +216,139 @@ print(df_voters['trump_vote'].value_counts())
 print(f"\nTrump voters: {df_voters['trump_vote'].sum():,.0f} ({df_voters['trump_vote'].mean()*100:.1f}%)")
 print(f"Non-Trump voters: {len(df_voters) - df_voters['trump_vote'].sum():,.0f} ({(1-df_voters['trump_vote'].mean())*100:.1f}%)")
 
-# Save the filtered dataset
+# =============================================================================
+# Step 1.3: Preserve Survey Weights
+# =============================================================================
+
+print("\n" + "=" * 60)
+print("Step 1.3: Preserve Survey Weights")
+print("=" * 60)
+
+# Extract survey weights as separate vector
+survey_wt = df_voters['WEIGHT'].copy()
+
+print(f"\nSurvey weight variable: WEIGHT")
+print(f"Weight statistics:")
+print(f"  - N: {survey_wt.notna().sum():,}")
+print(f"  - Missing: {survey_wt.isna().sum():,}")
+print(f"  - Mean: {survey_wt.mean():.4f}")
+print(f"  - Std: {survey_wt.std():.4f}")
+print(f"  - Min: {survey_wt.min():.4f}")
+print(f"  - Max: {survey_wt.max():.4f}")
+
+# Save weights separately for modeling
+survey_wt.to_csv('survey_weights.csv', index=False, header=['survey_wt'])
+print(f"\nSaved: survey_weights.csv ({len(survey_wt):,} weights)")
+
+# =============================================================================
+# Step 1.4: Exclude Inappropriate Variables
+# =============================================================================
+
+print("\n" + "=" * 60)
+print("Step 1.4: Exclude Inappropriate Variables")
+print("=" * 60)
+
+cols_before = len(df_voters.columns)
+
+# Define exclusion categories
+exclude_vars = {
+    'tautological': ['C6', 'C7', 'C15'],  # Trump/Pence favorability, congressional vote
+    'identifiers': ['RESPID', 'ZIPCODE', 'CITY_NAME', 'COUNTY_NAME'],
+    'metadata': ['INTERVIEW_START', 'INTERVIEW_END', 'DIFF_DATE', 'ETHNIC_QUOTA'],
+    'weights': ['WEIGHT', 'NAT_WEIGHT'],  # Used separately, not as predictors
+    'dv_source': ['C14'],  # Already encoded as trump_vote
+}
+
+# Identify race-specific variables (A*, B*, BW* items not asked of Latinos)
+race_specific_prefixes = ['A', 'B', 'BW']
+race_specific_vars = []
+for col in df_voters.columns:
+    for prefix in race_specific_prefixes:
+        # Match columns that start with prefix followed by a number or underscore
+        if col.startswith(prefix) and len(col) > len(prefix):
+            next_char = col[len(prefix)]
+            if next_char.isdigit() or next_char == '_':
+                # Check if 100% missing (race-specific by design)
+                if df_voters[col].isna().mean() > 0.99:
+                    race_specific_vars.append(col)
+                    break
+
+exclude_vars['race_specific'] = race_specific_vars
+
+# Identify high missingness variables (>50% missing)
+high_missing_vars = []
+for col in df_voters.columns:
+    if col not in [v for vals in exclude_vars.values() for v in vals]:
+        missing_pct = df_voters[col].isna().mean()
+        if missing_pct > 0.50:
+            high_missing_vars.append(col)
+
+exclude_vars['high_missingness'] = high_missing_vars
+
+# Identify open-text variables (>50 unique values for object type)
+open_text_vars = []
+for col in df_voters.columns:
+    if col not in [v for vals in exclude_vars.values() for v in vals]:
+        if df_voters[col].dtype == 'object':
+            n_unique = df_voters[col].nunique()
+            if n_unique > 50:
+                open_text_vars.append(col)
+
+exclude_vars['open_text'] = open_text_vars
+
+# Print exclusion summary
+print("\nVariables to exclude by category:")
+total_excluded = 0
+for category, vars_list in exclude_vars.items():
+    # Filter to only variables that exist in the dataframe
+    existing_vars = [v for v in vars_list if v in df_voters.columns]
+    print(f"\n  {category.upper()} ({len(existing_vars)} variables):")
+    if len(existing_vars) <= 10:
+        for v in existing_vars:
+            print(f"    - {v}")
+    else:
+        for v in existing_vars[:5]:
+            print(f"    - {v}")
+        print(f"    ... and {len(existing_vars) - 5} more")
+    total_excluded += len(existing_vars)
+
+# Create flat list of all variables to exclude
+all_exclude = []
+for vars_list in exclude_vars.values():
+    all_exclude.extend([v for v in vars_list if v in df_voters.columns])
+all_exclude = list(set(all_exclude))  # Remove duplicates
+
+# Remove excluded variables
+df_clean = df_voters.drop(columns=all_exclude, errors='ignore')
+
+print(f"\n" + "-" * 60)
+print("EXCLUSION SUMMARY")
+print("-" * 60)
+print(f"Variables before exclusion: {cols_before:,}")
+print(f"Variables excluded: {len(all_exclude):,}")
+print(f"Variables retained: {len(df_clean.columns):,}")
+
+# Verify trump_vote is still present
+if 'trump_vote' in df_clean.columns:
+    print(f"\nDV 'trump_vote' retained: YES")
+else:
+    print(f"\nWARNING: DV 'trump_vote' was excluded!")
+
+# Save the cleaned dataset
 print("\n" + "-" * 60)
 print("Saving preprocessed data...")
 print("-" * 60)
-df_voters.to_csv('cmps_2016_voters.csv', index=False)
-print(f"Saved: cmps_2016_voters.csv ({len(df_voters):,} rows, {len(df_voters.columns):,} columns)")
+df_clean.to_csv('cmps_2016_clean.csv', index=False)
+print(f"Saved: cmps_2016_clean.csv ({len(df_clean):,} rows, {len(df_clean.columns):,} columns)")
+
+# Also save the exclusion log
+exclusion_log = pd.DataFrame([
+    {'category': cat, 'variable': var}
+    for cat, vars_list in exclude_vars.items()
+    for var in vars_list if var in df_voters.columns
+])
+exclusion_log.to_csv('excluded_variables.csv', index=False)
+print(f"Saved: excluded_variables.csv ({len(exclusion_log):,} exclusions logged)")
 
 print("\n" + "=" * 60)
 print("PHASE 1 COMPLETE: Data Preprocessing")
@@ -230,4 +357,7 @@ print(f"\nSummary:")
 print(f"  - Loaded CMPS 2016 data: {df.shape[0]:,} observations, {df.shape[1]:,} variables")
 print(f"  - Created DV: trump_vote (1=Trump, 0=Non-Trump)")
 print(f"  - Filtered to voters only: {len(df_voters):,} observations")
-print(f"  - Saved to: cmps_2016_voters.csv")
+print(f"  - Preserved survey weights: survey_weights.csv")
+print(f"  - Excluded {len(all_exclude):,} inappropriate variables")
+print(f"  - Final dataset: {len(df_clean):,} obs x {len(df_clean.columns):,} vars")
+print(f"  - Saved to: cmps_2016_clean.csv")
