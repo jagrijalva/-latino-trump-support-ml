@@ -51,6 +51,7 @@ data/*.rda
 data/*.csv
 *.csv
 *.parquet
+*.png
 .DS_Store
 __pycache__/
 *.pyc
