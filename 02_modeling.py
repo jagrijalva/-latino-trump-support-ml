@@ -451,3 +451,314 @@ print(f"{'F1 Score':<25} {test_f1:<15.4f} {'':<30}")
 print(f"{'Brier Score':<25} {brier:<15.4f} {'Lower is better':<30}")
 print(f"{'Brier Skill':<25} {brier_skill:<15.4f} {'Improvement over baseline':<30}")
 print(f"{'Train-Test Gap':<25} {auc_gap:<15.4f} {'<0.10 ✓' if auc_gap < 0.10 else '>0.10 ⚠':<30}")
+
+# =============================================================================
+# Step 2.6: Interpretation
+# =============================================================================
+
+print("\n" + "=" * 60)
+print("Step 2.6: Interpretation")
+print("=" * 60)
+
+# --- 2.6a: Permutation Importance ---
+print(f"\n" + "-" * 60)
+print("PERMUTATION IMPORTANCE (Test Set, 50 repeats)")
+print("-" * 60)
+
+from sklearn.inspection import permutation_importance
+
+print(f"\n  Computing permutation importance on test set...")
+print(f"  (Using 10 repeats for efficiency)")
+
+perm_importance = permutation_importance(
+    final_model, X_test, y_test,
+    n_repeats=10,
+    random_state=42,
+    n_jobs=-1,
+    scoring='roc_auc'
+)
+
+# Get top 20 features
+perm_imp_mean = perm_importance.importances_mean
+perm_imp_std = perm_importance.importances_std
+feature_names = X_test.columns.tolist()
+
+perm_imp_df = pd.DataFrame({
+    'feature': feature_names,
+    'importance_mean': perm_imp_mean,
+    'importance_std': perm_imp_std
+}).sort_values('importance_mean', ascending=False)
+
+print(f"\n  Top 20 Features by Permutation Importance:")
+print(f"  {'Rank':<6} {'Feature':<50} {'Importance':<15} {'Std':<10}")
+print("  " + "-" * 81)
+
+top_20_perm = perm_imp_df.head(20)
+for i, (_, row) in enumerate(top_20_perm.iterrows(), 1):
+    print(f"  {i:<6} {row['feature']:<50} {row['importance_mean']:<15.4f} {row['importance_std']:<10.4f}")
+
+# Save permutation importance
+perm_imp_df.to_csv('permutation_importance.csv', index=False)
+print(f"\n  Saved: permutation_importance.csv")
+
+# --- 2.6b: SHAP Analysis ---
+print(f"\n" + "-" * 60)
+print("SHAP ANALYSIS (TreeExplainer, 500 test observations)")
+print("-" * 60)
+
+import shap
+import matplotlib
+matplotlib.use('Agg')  # Non-interactive backend
+import matplotlib.pyplot as plt
+
+print(f"\n  Creating SHAP TreeExplainer...")
+explainer = shap.TreeExplainer(final_model)
+
+# Use 200 test observations for SHAP (reduced for efficiency)
+n_shap = min(200, len(X_test))
+X_shap = X_test.iloc[:n_shap]
+
+print(f"  Computing SHAP values for {n_shap} observations...")
+shap_values = explainer.shap_values(X_shap)
+
+# For binary classification, shap_values is a list [class_0, class_1]
+# We want class 1 (Trump voter)
+if isinstance(shap_values, list):
+    shap_values_class1 = shap_values[1]
+else:
+    shap_values_class1 = shap_values
+
+# Ensure shap_values_class1 is 2D (observations x features)
+if len(shap_values_class1.shape) == 3:
+    # Shape is (n_samples, n_features, n_classes) - take class 1
+    shap_values_class1 = shap_values_class1[:, :, 1]
+
+# Calculate mean absolute SHAP values
+mean_abs_shap = np.abs(shap_values_class1).mean(axis=0)
+
+# Ensure it's 1D
+if len(mean_abs_shap.shape) > 1:
+    mean_abs_shap = mean_abs_shap.flatten()
+
+shap_importance_df = pd.DataFrame({
+    'feature': feature_names,
+    'mean_abs_shap': mean_abs_shap
+}).sort_values('mean_abs_shap', ascending=False)
+
+print(f"\n  Top 20 Features by Mean |SHAP| Value:")
+print(f"  {'Rank':<6} {'Feature':<50} {'Mean |SHAP|':<15}")
+print("  " + "-" * 71)
+
+top_20_shap = shap_importance_df.head(20)
+for i, (_, row) in enumerate(top_20_shap.iterrows(), 1):
+    print(f"  {i:<6} {row['feature']:<50} {row['mean_abs_shap']:<15.4f}")
+
+# Save SHAP importance
+shap_importance_df.to_csv('shap_importance.csv', index=False)
+print(f"\n  Saved: shap_importance.csv")
+
+# Generate SHAP summary plot (beeswarm)
+print(f"\n  Generating SHAP summary plot (beeswarm)...")
+plt.figure(figsize=(12, 10))
+shap.summary_plot(shap_values_class1, X_shap, show=False, max_display=20)
+plt.tight_layout()
+plt.savefig('shap_summary_beeswarm.png', dpi=150, bbox_inches='tight')
+plt.close()
+print(f"  Saved: shap_summary_beeswarm.png")
+
+# Generate SHAP dependence plots for top 5 predictors
+print(f"\n  Generating SHAP dependence plots for top 5 predictors...")
+top_5_features = shap_importance_df.head(5)['feature'].tolist()
+
+for i, feat in enumerate(top_5_features, 1):
+    plt.figure(figsize=(10, 6))
+    shap.dependence_plot(feat, shap_values_class1, X_shap, show=False)
+    plt.tight_layout()
+    plt.savefig(f'shap_dependence_{i}_{feat[:30]}.png', dpi=150, bbox_inches='tight')
+    plt.close()
+    print(f"    {i}. {feat}")
+
+print(f"  Saved: shap_dependence_*.png (5 files)")
+
+# =============================================================================
+# Step 2.7: Robustness Checks
+# =============================================================================
+
+print("\n" + "=" * 60)
+print("Step 2.7: Robustness Checks")
+print("=" * 60)
+
+# --- 2.7a: Weighted Logistic Regression ---
+print(f"\n" + "-" * 60)
+print("WEIGHTED LOGISTIC REGRESSION (statsmodels)")
+print("-" * 60)
+
+import statsmodels.api as sm
+from sklearn.preprocessing import StandardScaler
+
+print(f"\n  Fitting weighted logistic regression...")
+print(f"  (Standardizing features for coefficient comparison)")
+
+# Standardize features
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_train_scaled_df = pd.DataFrame(X_train_scaled, columns=X_train.columns)
+
+# Add constant for statsmodels
+X_train_sm = sm.add_constant(X_train_scaled_df)
+
+# Fit weighted logistic regression
+try:
+    logit_model = sm.GLM(
+        y_train.values,
+        X_train_sm,
+        family=sm.families.Binomial(),
+        freq_weights=weights_train.values
+    )
+    logit_results = logit_model.fit(maxiter=100, method='bfgs', disp=0)
+
+    # Get coefficients (excluding constant)
+    coef_df = pd.DataFrame({
+        'feature': X_train.columns,
+        'coefficient': logit_results.params[1:],  # Skip constant
+        'abs_coefficient': np.abs(logit_results.params[1:])
+    }).sort_values('abs_coefficient', ascending=False)
+
+    print(f"\n  Top 10 Predictors by |Coefficient| (Logistic Regression):")
+    print(f"  {'Rank':<6} {'Feature':<50} {'Coef':<12} {'Direction':<10}")
+    print("  " + "-" * 78)
+
+    top_10_logit = coef_df.head(10)
+    logit_top_features = []
+    for i, (_, row) in enumerate(top_10_logit.iterrows(), 1):
+        direction = "+" if row['coefficient'] > 0 else "-"
+        print(f"  {i:<6} {row['feature']:<50} {row['coefficient']:<12.4f} {direction:<10}")
+        logit_top_features.append((row['feature'], row['coefficient']))
+
+    # Save logistic regression coefficients
+    coef_df.to_csv('logistic_coefficients.csv', index=False)
+    print(f"\n  Saved: logistic_coefficients.csv")
+
+    # Compare RF and Logistic Regression top features
+    print(f"\n" + "-" * 60)
+    print("COMPARISON: RF vs Logistic Regression Top 10")
+    print("-" * 60)
+
+    rf_top_10 = top_20_perm.head(10)['feature'].tolist()
+    logit_top_10 = [f[0] for f in logit_top_features]
+
+    overlap = set(rf_top_10) & set(logit_top_10)
+    print(f"\n  RF Top 10 (Permutation Importance):")
+    for i, f in enumerate(rf_top_10, 1):
+        marker = "* " if f in overlap else "  "
+        print(f"    {marker}{i}. {f}")
+
+    print(f"\n  Logistic Regression Top 10 (|Coefficient|):")
+    for i, (f, coef) in enumerate(logit_top_features, 1):
+        marker = "* " if f in overlap else "  "
+        direction = "(+)" if coef > 0 else "(-)"
+        print(f"    {marker}{i}. {f} {direction}")
+
+    print(f"\n  Overlap: {len(overlap)} features in both top 10")
+    print(f"  Overlapping features: {list(overlap) if overlap else 'None'}")
+
+except Exception as e:
+    print(f"\n  Warning: Logistic regression failed: {e}")
+    print(f"  Skipping logistic regression comparison...")
+    coef_df = None
+
+# --- 2.7b: Seed Stability ---
+print(f"\n" + "-" * 60)
+print("SEED STABILITY TEST")
+print("-" * 60)
+
+print(f"\n  Testing model stability across different random seeds...")
+
+seed_results = []
+
+# Original seed (42)
+seed_results.append({
+    'seed': 42,
+    'test_auc': test_roc_auc
+})
+
+# Test with seed 123
+print(f"  Training with seed 123...")
+rf_123 = RandomForestClassifier(
+    n_estimators=500,
+    max_features='sqrt',
+    min_samples_leaf=1,
+    class_weight='balanced',
+    random_state=123,
+    n_jobs=-1
+)
+rf_123.fit(X_train, y_train, sample_weight=weights_train)
+auc_123 = roc_auc_score(y_test, rf_123.predict_proba(X_test)[:, 1], sample_weight=weights_test)
+seed_results.append({'seed': 123, 'test_auc': auc_123})
+
+# Test with seed 456
+print(f"  Training with seed 456...")
+rf_456 = RandomForestClassifier(
+    n_estimators=500,
+    max_features='sqrt',
+    min_samples_leaf=1,
+    class_weight='balanced',
+    random_state=456,
+    n_jobs=-1
+)
+rf_456.fit(X_train, y_train, sample_weight=weights_train)
+auc_456 = roc_auc_score(y_test, rf_456.predict_proba(X_test)[:, 1], sample_weight=weights_test)
+seed_results.append({'seed': 456, 'test_auc': auc_456})
+
+seed_df = pd.DataFrame(seed_results)
+auc_range = seed_df['test_auc'].max() - seed_df['test_auc'].min()
+auc_mean = seed_df['test_auc'].mean()
+auc_std = seed_df['test_auc'].std()
+
+print(f"\n  Seed Stability Results:")
+print(f"  {'Seed':<10} {'Test AUC':<15}")
+print("  " + "-" * 25)
+for _, row in seed_df.iterrows():
+    print(f"  {row['seed']:<10} {row['test_auc']:<15.4f}")
+
+print(f"\n  Summary:")
+print(f"    Mean AUC:  {auc_mean:.4f}")
+print(f"    Std Dev:   {auc_std:.4f}")
+print(f"    Range:     {auc_range:.4f}")
+
+if auc_range < 0.02:
+    print(f"\n  ✓ Model is stable across seeds (range < 0.02)")
+elif auc_range < 0.05:
+    print(f"\n  ⚠ Moderate seed sensitivity (range 0.02-0.05)")
+else:
+    print(f"\n  ⚠ High seed sensitivity (range > 0.05)")
+
+# Save seed stability results
+seed_df.to_csv('seed_stability.csv', index=False)
+print(f"\n  Saved: seed_stability.csv")
+
+# =============================================================================
+# Step 2.6-2.7 Summary
+# =============================================================================
+
+print("\n" + "=" * 60)
+print("INTERPRETATION & ROBUSTNESS SUMMARY")
+print("=" * 60)
+
+print(f"\n  Permutation Importance (Top 5):")
+for i, (_, row) in enumerate(top_20_perm.head(5).iterrows(), 1):
+    print(f"    {i}. {row['feature']}: {row['importance_mean']:.4f}")
+
+print(f"\n  SHAP Importance (Top 5):")
+for i, (_, row) in enumerate(top_20_shap.head(5).iterrows(), 1):
+    print(f"    {i}. {row['feature']}: {row['mean_abs_shap']:.4f}")
+
+print(f"\n  Seed Stability: Range = {auc_range:.4f} ({'✓ Stable' if auc_range < 0.02 else '⚠ Check'})")
+
+print(f"\n  Output Files Saved:")
+print(f"    - permutation_importance.csv")
+print(f"    - shap_importance.csv")
+print(f"    - shap_summary_beeswarm.png")
+print(f"    - shap_dependence_*.png (5 files)")
+print(f"    - logistic_coefficients.csv")
+print(f"    - seed_stability.csv")
