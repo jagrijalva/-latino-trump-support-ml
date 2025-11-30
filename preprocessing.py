@@ -105,6 +105,29 @@ print("Step 1.1 Complete: Data loaded successfully")
 print("=" * 60)
 
 # =============================================================================
+# Step 1.1b: Filter to Latino Respondents Only
+# =============================================================================
+
+print("\n" + "=" * 60)
+print("Step 1.1b: Filter to Latino Respondents")
+print("=" * 60)
+
+print("\nETHNIC_QUOTA distribution (full sample):")
+print(df['ETHNIC_QUOTA'].value_counts(dropna=False))
+
+# Filter to Latino respondents only
+n_before = len(df)
+df = df[df['ETHNIC_QUOTA'] == '(2) Hispanic or Latino'].copy()
+n_after = len(df)
+
+print(f"\n" + "-" * 60)
+print("FILTER STEP 1: Latino respondents only")
+print("-" * 60)
+print(f"  Before filter: {n_before:,}")
+print(f"  After filter:  {n_after:,}")
+print(f"  Excluded:      {n_before - n_after:,}")
+
+# =============================================================================
 # Step 1.2: Identify Presidential Vote Variable
 # =============================================================================
 
@@ -201,14 +224,16 @@ print("\nDV Distribution (before dropping non-voters):")
 print(df['trump_vote'].value_counts(dropna=False))
 
 # Filter to voters only (exclude abstainers/missing)
+n_before_vote_filter = len(df)
 df_voters = df[df['trump_vote'].notna()].copy()
+n_after_vote_filter = len(df_voters)
 
 print(f"\n" + "-" * 60)
-print("FINAL DATASET DIMENSIONS (Voters Only)")
+print("FILTER STEP 2: Valid vote choice (non-missing C14)")
 print("-" * 60)
-print(f"Original observations: {len(df):,}")
-print(f"Voters retained: {len(df_voters):,}")
-print(f"Non-voters excluded: {len(df) - len(df_voters):,}")
+print(f"  Before filter: {n_before_vote_filter:,}")
+print(f"  After filter:  {n_after_vote_filter:,}")
+print(f"  Excluded:      {n_before_vote_filter - n_after_vote_filter:,}")
 
 print("\nFinal DV Distribution:")
 print(df_voters['trump_vote'].value_counts())
