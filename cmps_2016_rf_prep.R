@@ -32,25 +32,25 @@ cat(strrep("-", 40), "\n")
 cat("C14 (Vote Choice) distribution for Latinos:\n")
 print(table(latinos$C14, useNA = "always"))
 
-# Version A: Trump vs Clinton ONLY (strictest - two major party candidates)
-latinos_binary_strict <- latinos[latinos$C14 %in% c("(1) Hillary Clinton", "(2) Donald Trump"), ]
-latinos_binary_strict$trump_vote <- ifelse(latinos_binary_strict$C14 == "(2) Donald Trump", 1, 0)
+# Binary DV: Trump (1) vs All Other Voters (0)
+# Include: Clinton, Johnson, Stein, Someone else
+# Exclude: Non-voters (NA in C14)
 
-cat("\nVersion A (Trump vs Clinton only):\n")
-cat("  Sample size:", nrow(latinos_binary_strict), "\n")
-cat("  Trump votes:", sum(latinos_binary_strict$trump_vote), "\n")
-cat("  Clinton votes:", sum(latinos_binary_strict$trump_vote == 0), "\n")
-cat("  Trump %:", round(100 * mean(latinos_binary_strict$trump_vote), 2), "%\n")
+# Filter to respondents with valid vote choice (exclude NA)
+latinos_voters <- latinos[!is.na(latinos$C14), ]
 
-# Version B: Trump vs ALL Others (Clinton + 3rd party, excluding "Someone else")
-latinos_binary_broad <- latinos[latinos$C14 != "(5) Someone else", ]
-latinos_binary_broad$trump_vote <- ifelse(latinos_binary_broad$C14 == "(2) Donald Trump", 1, 0)
+# Create binary DV: Trump = 1, All others = 0
+latinos_voters$trump_vote <- ifelse(latinos_voters$C14 == "(2) Donald Trump", 1, 0)
 
-cat("\nVersion B (Trump vs Clinton/3rd party, excluding 'Someone else'):\n")
-cat("  Sample size:", nrow(latinos_binary_broad), "\n")
-cat("  Trump votes:", sum(latinos_binary_broad$trump_vote), "\n")
-cat("  Non-Trump votes:", sum(latinos_binary_broad$trump_vote == 0), "\n")
-cat("  Trump %:", round(100 * mean(latinos_binary_broad$trump_vote), 2), "%\n")
+cat("\nBinary DV: Trump (1) vs All Other Voters (0)\n")
+cat("  Total voters:", nrow(latinos_voters), "\n")
+cat("  Trump votes:", sum(latinos_voters$trump_vote), "\n")
+cat("  Non-Trump votes:", sum(latinos_voters$trump_vote == 0), "\n")
+cat("  Trump %:", round(100 * mean(latinos_voters$trump_vote), 2), "%\n")
+
+cat("\nNon-Trump breakdown:\n")
+non_trump <- latinos_voters[latinos_voters$trump_vote == 0, ]
+print(table(non_trump$C14))
 
 # ============================================================
 # STEP 3: IDENTIFY VARIABLES TO EXCLUDE
@@ -144,8 +144,8 @@ if (length(high_missing_vars) > 0) {
 cat("\n\nSTEP 4: CREATE FINAL RF DATASET\n")
 cat(strrep("-", 40), "\n")
 
-# Use Version A (Trump vs Clinton) as default
-rf_data <- latinos_binary_strict
+# Use all Latino voters with Trump vs All Others
+rf_data <- latinos_voters
 
 # Remove excluded variables
 vars_to_remove <- exclude_all[exclude_all %in% names(rf_data)]
@@ -235,12 +235,12 @@ cat("RF PREPARATION SUMMARY\n")
 cat(strrep("=", 60), "\n")
 cat("Original dataset:       ", nrow(df), "x", ncol(df), "\n")
 cat("Latino subsample:       ", nrow(latinos), "respondents\n")
-cat("After binary filter:    ", nrow(latinos_binary_strict), "(Trump vs Clinton voters)\n")
+cat("Latino voters:          ", nrow(latinos_voters), "(excludes non-voters)\n")
 cat("Final RF dataset:       ", nrow(rf_data_clean), "x", ncol(rf_data_clean), "\n")
 cat("\n")
-cat("DV: trump_vote\n")
+cat("DV: trump_vote (Trump=1 vs All Others=0)\n")
 cat("  Trump (1):            ", sum(rf_data_clean$trump_vote), "\n")
-cat("  Clinton (0):          ", sum(rf_data_clean$trump_vote == 0), "\n")
+cat("  Non-Trump (0):        ", sum(rf_data_clean$trump_vote == 0), "\n")
 cat("  Class balance:        ", round(100*mean(rf_data_clean$trump_vote), 2), "% Trump\n")
 cat("\n")
 cat("Variables excluded:     ", length(exclude_all) + length(high_missing_final), "\n")
