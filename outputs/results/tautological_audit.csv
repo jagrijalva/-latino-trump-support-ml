@@ -1,0 +1,5 @@
+variable,type,status
+C4_(2) Somewhat favorable,Trump favorability (C4_),EXCLUDED (partisan)
+C4_(3) Somewhat unfavorable,Trump favorability (C4_),EXCLUDED (partisan)
+C4_(4) Very unfavorable,Trump favorability (C4_),EXCLUDED (partisan)
+C4_Other,Trump favorability (C4_),EXCLUDED (partisan)

@@ -1,0 +1,5 @@
+Model,Actual,Predicted_NonTrump,Predicted_Trump
+Full Model,Non-Trump,480,2
+Full Model,Trump,78,41
+Non-Partisan,Non-Trump,482,0
+Non-Partisan,Trump,99,20

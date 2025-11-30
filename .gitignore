@@ -52,6 +52,9 @@ data/*.csv
 *.csv
 *.parquet
 *.png
+
+# Allow outputs/results for documentation
+!outputs/results/*.csv
 .DS_Store
 __pycache__/
 *.pyc

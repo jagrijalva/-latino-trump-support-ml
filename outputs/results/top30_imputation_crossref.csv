@@ -1,0 +1,61 @@
+rank,feature,base_variable,was_imputed,n_imputed,pct_imputed,model
+1,C4_(4) Very unfavorable,C4,False,0,0.0,Full Model
+2,C242_HID_(2) Democratic Party,C242_HID,True,198,6.597800733088971,Full Model
+3,L46_(2) Democrat,L46,False,0,0.0,Full Model
+4,C2_(4) Very unfavorable,C2,False,0,0.0,Full Model
+5,L266_(2) Democrats,L266,False,0,0.0,Full Model
+6,C41_(5) Strongly disagree,C41,False,0,0.0,Full Model
+7,C9_(4) Very unfavorable,C9,False,0,0.0,Full Model
+8,C25_(2) Democrat,C25,False,0,0.0,Full Model
+9,C337_(2) Increase,C337,True,2,0.06664445184938354,Full Model
+10,C4_(2) Somewhat favorable,C4,False,0,0.0,Full Model
+11,C2_(3) Somewhat unfavorable,C2,False,0,0.0,Full Model
+12,C142_(3) Bothers me a lot,C142,True,11,0.3665444851716095,Full Model
+13,C115_(4) Never,C115,True,9,0.2999000333222259,Full Model
+14,C114_(4) Never,C114,False,0,0.0,Full Model
+15,C45_(5) Strongly disagree,C45,False,0,0.0,Full Model
+16,L267_(2) Democrats,L267,False,0,0.0,Full Model
+17,C3_(4) Very unfavorable,C3,False,0,0.0,Full Model
+18,C248_(3) A little,C248,True,1,0.03332222592469177,Full Model
+19,C141_(4) Somewhat support deporting these immigrants,C141,True,2,0.06664445184938354,Full Model
+20,BLA206_(4) Strongly disagree,BLA206,False,0,0.0,Full Model
+21,C158_(02) Should not,C158,True,11,0.3665444851716095,Full Model
+22,C338_(2) Increase,C338,False,0,0.0,Full Model
+23,C109_(4) Not at all as an outsider,C109,True,1,0.03332222592469177,Full Model
+24,SC2000_PERCENTNOTCITIZEN,SC2000_PERCENTNOTCITIZEN,True,109,3.632122625791403,Full Model
+25,C258_(2) No,C258,True,1448,48.25058313895369,Full Model
+26,C256_(2) No,C256,True,1452,48.38387204265245,Full Model
+27,C111_(4) Never,C111,True,2,0.06664445184938354,Full Model
+28,DP2000_PERCENTHOUSEHOLDSVACANT,DP2000_PERCENTHOUSEHOLDSVACANT,True,106,3.5321559480173277,Full Model
+29,BLA207_(4) Strongly disagree,BLA207,False,0,0.0,Full Model
+30,L46_(3) Neither party is better than the other,L46,False,0,0.0,Full Model
+1,C41_(5) Strongly disagree,C41,False,0,0.0,Non-Partisan Model
+2,C337_(2) Increase,C337,True,2,0.06664445184938354,Non-Partisan Model
+3,C158_(02) Should not,C158,True,11,0.3665444851716095,Non-Partisan Model
+4,C38_(3) They should be required to leave their jobs and immediately leave the U.S.,C38,False,0,0.0,Non-Partisan Model
+5,C247_(3) A little,C247,True,1,0.03332222592469177,Non-Partisan Model
+6,C142_(3) Bothers me a lot,C142,True,11,0.3665444851716095,Non-Partisan Model
+7,C45_(5) Strongly disagree,C45,False,0,0.0,Non-Partisan Model
+8,C42_Other,C42,False,0,0.0,Non-Partisan Model
+9,C115_(4) Never,C115,True,9,0.2999000333222259,Non-Partisan Model
+10,C112_(4) Never,C112,False,0,0.0,Non-Partisan Model
+11,C40_(5) Strongly disagree,C40,False,0,0.0,Non-Partisan Model
+12,BLA207_(4) Strongly disagree,BLA207,False,0,0.0,Non-Partisan Model
+13,C141_(4) Somewhat support deporting these immigrants,C141,True,2,0.06664445184938354,Non-Partisan Model
+14,C228_(5) Strongly oppose,C228,False,0,0.0,Non-Partisan Model
+15,C248_(3) A little,C248,True,1,0.03332222592469177,Non-Partisan Model
+16,L219_(4) Somewhat agree,L219,False,0,0.0,Non-Partisan Model
+17,BL174_(5) Strongly disagree,BL174,True,3,0.09996667777407531,Non-Partisan Model
+18,C129_(3) Christian,C129,True,1,0.03332222592469177,Non-Partisan Model
+19,BLA207_(2) Somewhat agree,BLA207,False,0,0.0,Non-Partisan Model
+20,C338_(2) Increase,C338,False,0,0.0,Non-Partisan Model
+21,C109_(4) Not at all as an outsider,C109,True,1,0.03332222592469177,Non-Partisan Model
+22,C111_(4) Never,C111,True,2,0.06664445184938354,Non-Partisan Model
+23,DP2010_MEDIANAGE,DP2010_MEDIANAGE,True,39,1.299566811062979,Non-Partisan Model
+24,C256_(2) No,C256,True,1452,48.38387204265245,Non-Partisan Model
+25,L231_(4) Often treated unfairly,L231,False,0,0.0,Non-Partisan Model
+26,BLA206_(4) Strongly disagree,BLA206,False,0,0.0,Non-Partisan Model
+27,HISP2015_NUMBSAMERICAN,HISP2015_NUMBSAMERICAN,True,39,1.299566811062979,Non-Partisan Model
+28,DP2015_PERCENTFEMALE,DP2015_PERCENTFEMALE,True,40,1.332889036987671,Non-Partisan Model
+29,C337_(3) Stay the same,C337,True,2,0.06664445184938354,Non-Partisan Model
+30,C246_(3) A little,C246,True,1,0.03332222592469177,Non-Partisan Model
