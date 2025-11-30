@@ -39,8 +39,8 @@ def create_text_page(pdf, title, content_lines, fontsize=10):
     pdf.savefig(fig, bbox_inches='tight')
     plt.close(fig)
 
-def create_table_page(pdf, title, df, max_rows=15):
-    """Create a page with a table"""
+def create_table_page(pdf, title, df, start_rank=1):
+    """Create a page with a table showing all rows in df"""
     fig, ax = plt.subplots(figsize=(8.5, 11))
     ax.axis('off')
 
@@ -48,22 +48,29 @@ def create_table_page(pdf, title, df, max_rows=15):
     ax.text(0.5, 0.95, title, fontsize=12, fontweight='bold',
             ha='center', va='top', transform=ax.transAxes)
 
-    # Truncate feature names for display
-    df_display = df.head(max_rows).copy()
-    if 'feature' in df_display.columns:
-        df_display['feature'] = df_display['feature'].str[:50]
+    # Prepare display dataframe
+    df_display = df.copy()
+    if 'Feature' in df_display.columns:
+        df_display['Feature'] = df_display['Feature'].str[:45]
+
+    # Add rank column
+    df_display.insert(0, 'Rank', range(start_rank, start_rank + len(df_display)))
+
+    # Calculate table height based on number of rows
+    n_rows = len(df_display)
+    table_height = min(0.78, 0.025 * (n_rows + 1))
 
     # Create table
     table = ax.table(
         cellText=df_display.round(4).values,
         colLabels=df_display.columns,
         cellLoc='center',
-        loc='center',
-        bbox=[0.02, 0.15, 0.96, 0.75]
+        loc='upper center',
+        bbox=[0.02, 0.92 - table_height - 0.05, 0.96, table_height]
     )
     table.auto_set_font_size(False)
-    table.set_fontsize(8)
-    table.scale(1, 1.5)
+    table.set_fontsize(7)
+    table.scale(1, 1.3)
 
     # Style header
     for i in range(len(df_display.columns)):
@@ -126,33 +133,55 @@ def main():
             page1_content)
 
         # =================================================================
-        # PAGE 2: Full Model Top Predictors
+        # PAGE 2-3: Full Model Top 30 Predictors (split across 2 pages)
         # =================================================================
         try:
             df_full = pd.read_csv('top30_full_model.csv')
-            df_full_display = df_full[['feature', 'importance_mean', 'importance_std']].head(15)
+            df_full_display = df_full[['feature', 'importance_mean', 'importance_std']].head(30)
             df_full_display.columns = ['Feature', 'Importance', 'Std']
-            df_full_display.insert(0, 'Rank', range(1, len(df_full_display)+1))
-            create_table_page(pdf, 'Top 15 Predictors - Full Model (AUC: 0.9383)', df_full_display)
+
+            # Page 2: Ranks 1-15
+            create_table_page(pdf,
+                'Top 30 Predictors - Full Model (AUC: 0.9383)\nRanks 1-15',
+                df_full_display.iloc[0:15].copy(),
+                start_rank=1)
+
+            # Page 3: Ranks 16-30
+            create_table_page(pdf,
+                'Top 30 Predictors - Full Model (AUC: 0.9383)\nRanks 16-30',
+                df_full_display.iloc[15:30].copy(),
+                start_rank=16)
+
         except Exception as e:
             print(f'Could not load full model results: {e}')
 
         # =================================================================
-        # PAGE 3: Non-Partisan Model Top Predictors
+        # PAGE 4-5: Non-Partisan Model Top 30 Predictors (split across 2 pages)
         # =================================================================
         try:
             df_np = pd.read_csv('top30_nonpartisan_model.csv')
-            df_np_display = df_np[['feature', 'importance_mean', 'importance_std']].head(15)
+            df_np_display = df_np[['feature', 'importance_mean', 'importance_std']].head(30)
             df_np_display.columns = ['Feature', 'Importance', 'Std']
-            df_np_display.insert(0, 'Rank', range(1, len(df_np_display)+1))
-            create_table_page(pdf, 'Top 15 Predictors - Non-Partisan Model (AUC: 0.8736)', df_np_display)
+
+            # Page 4: Ranks 1-15
+            create_table_page(pdf,
+                'Top 30 Predictors - Non-Partisan Model (AUC: 0.8736)\nRanks 1-15',
+                df_np_display.iloc[0:15].copy(),
+                start_rank=1)
+
+            # Page 5: Ranks 16-30
+            create_table_page(pdf,
+                'Top 30 Predictors - Non-Partisan Model (AUC: 0.8736)\nRanks 16-30',
+                df_np_display.iloc[15:30].copy(),
+                start_rank=16)
+
         except Exception as e:
             print(f'Could not load non-partisan results: {e}')
 
         # =================================================================
-        # PAGE 4: Partisan Variables Removed
+        # PAGE 6: Partisan Variables Removed
         # =================================================================
-        page4_content = [
+        page6_content = [
             '## Partisan Variables Removed (46 columns total)',
             '',
             'Variable    Description',
@@ -186,7 +215,7 @@ def main():
             f'Report generated: {datetime.now().strftime("%Y-%m-%d %H:%M")}',
         ]
 
-        create_text_page(pdf, 'Appendix: Variables & Methods', page4_content)
+        create_text_page(pdf, 'Appendix: Variables & Methods', page6_content)
 
     print(f'Report saved: {output_path}')
 
